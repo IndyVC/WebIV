@@ -1,0 +1,72 @@
+/*---CSS MOBILE---*/
+.containerlg {
+  display: none;
+  top: 0;
+}
+
+.containersm {
+  top: 0;
+  width: 100%;
+  height: 5%;
+  position: fixed;
+}
+
+.white {
+  color: #e6e6e6;
+}
+
+a {
+  text-decoration: none;
+  color: #f6f5f6;
+  font-family: 'Quicksand', 'Open Sans', sans-serif;
+}
+
+
+/*---CSS DESKTOP--*/
+@media screen and (min-width: 1100px) {
+  .containersm {
+    display: none;
+  }
+
+  .containerlg {
+    /* The image used */
+    display: block;
+    background-image: url(../../assets/car1.png);
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    /* Center and scale the image nicely*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .containerlg h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 3em;
+    color: #22657f;
+  }
+
+  .menubar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-top: 80vh;
+    justify-content: space-around;
+  }
+
+  .menubar a {
+    color: #e6e6e6;
+    text-decoration: none;
+    font-family: 'Quicksand', 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+
+  }
+
+  .menubar a:hover {
+    color: #22657f;
+  }
+}

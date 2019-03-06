@@ -1,0 +1,84 @@
+/* --- Small screens---*/
+.containerlg {
+  display: none;
+  box-sizing: border-box;
+}
+
+.containersm {
+  height: 100%;
+  width: 100%;
+}
+
+.items {
+  max-width: 400px;
+  height: 300px;
+}
+
+#left,
+#right {
+  margin: 30px;
+  width: 25px;
+  height: 25px;
+}
+
+.containersm h1 {
+  font-family: 'Quicksand', 'Open Sans', sans-serif;
+  font-weight: bolder;
+  font-size: 48px;
+  text-align: center;
+  color: #f6f5f6;
+}
+
+/*--- Large screens---*/
+@media screen and (min-width: 1100px) {
+
+  /*CARROUSEL CSS*/
+  .containersm {
+    display: none;
+  }
+
+  .containerlg {
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin-top: 100vh;
+    /*background-color: rgba(63, 63, 63, 0.3);*/
+  }
+
+  .containerlg h1 {
+    font-family: 'Quicksand', 'Open Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 72px;
+    text-align: center;
+    color: #f6f5f6;
+
+  }
+
+  .items {
+    max-width: 800px;
+    height: 300px;
+  }
+
+  #left,
+  #right {
+    width: 50px;
+    height: 50px;
+  }
+
+  /*Content CSS*/
+
+  /*Parallax CSS*/
+  .parallax {
+    /* The image used*/
+    background-image: url('../../assets/parallax.png');
+
+    /* Full height*/
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

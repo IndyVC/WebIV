@@ -1,0 +1,143 @@
+/* --- Small screens ---*/
+.container {
+  width: 400;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  width: 200px;
+  height: 150px;
+}
+
+.left img {
+  width: 200px;
+  height: 150px;
+}
+
+.right {
+  width: 200px;
+  height: 150px;
+  background-image: url(../../assets/bgcar.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #f6f5f6;
+}
+
+.right .text h1 {
+  font-weight: bold;
+  font-family: 'Quicksand', 'Open Sans', sans-serif;
+  font-size: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+.right .text p {
+  font-family: 'Quicksand', 'Open Sans', sans-serif;
+  font-size: 24px;
+  font-weight: lighter;
+  padding: 0;
+  margin: 0;
+}
+
+.text {
+  margin-top: 20px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 25%;
+}
+
+.buttons .readMoreA {
+  color: #f6f5f6;
+  font-family: 'Quicksand', 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 5%;
+}
+
+.buttons .rateA {
+  color: #f6f5f6;
+  font-family: 'Quicksand', 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 25%;
+}
+
+.buttons>a:hover {
+  color: #22657f;
+}
+
+@media screen and (min-width: 1100px) {
+
+  /*---Large screens ---*/
+  .container {
+    width: 800px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .left {
+    width: 400px;
+    height: 300px;
+  }
+
+  .left img {
+    width: 400px;
+    height: 300px;
+  }
+
+  .right {
+    width: 400px;
+    height: 300px;
+    background-image: url(../../assets/bgcar.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #f6f5f6;
+  }
+
+  .right .text{
+    width:400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right .text h1{
+    font-size:48px;
+  }
+
+  .right .text p{
+    font-size:48px;
+  }
+
+  .buttons{
+    width:400px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:25%;
+  }
+  .buttons .readMoreA {
+    font-size: 24px;
+
+  }
+
+  .buttons .rateA {
+    font-size: 24px;
+  }
+
+
+}
