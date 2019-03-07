@@ -5,7 +5,10 @@ import {
   MatCheckboxModule,
   MatListModule,
   MatCardModule,
-  MatIconModule
+  MatIconModule,
+  MatTooltipModule,
+  MatSidenavModule,
+  MatToolbarModule
 } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -17,6 +20,7 @@ import { MenuComponent } from './menu/menu.component';
 import { CompareCarComponent } from './compare-car/compare-car.component';
 import { CarComponent } from './car/car.component';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { Ng2CarouselamosModule } from 'ng2-carouselamos';
     MatMenuModule,
     MatExpansionModule,
     MatFormFieldModule,
-    Ng2CarouselamosModule
+    Ng2CarouselamosModule,
+    FlexLayoutModule,
+    MatTooltipModule,
+    MatSidenavModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

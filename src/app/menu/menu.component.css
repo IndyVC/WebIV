@@ -1,72 +1,78 @@
-/*---CSS MOBILE---*/
-.containerlg {
+/*mobile First*/
+.menubarButtons {
   display: none;
-  top: 0;
+
 }
 
-.containersm {
-  top: 0;
+.container {
+  height: 100%;
   width: 100%;
-  height: 5%;
-  position: fixed;
+  background-image: url(../../assets/bgmobile.png);
+  background-size: cover;
+  background-repeat: none;
+  background-attachment: fixed;
 }
 
-.white {
-  color: #e6e6e6;
+h1 {
+  color: #f6f5f6;
+  margin: 10px;
+}
+
+.unfold_more {
+  color: #f6f5f6;
 }
 
 a {
   text-decoration: none;
-  color: #f6f5f6;
-  font-family: 'Quicksand', 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(27, 89, 118)
 }
 
+@media only screen and (min-width: 768px) {
+  .container {
+    top: 0;
+    background-image: url(../../assets/car1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: unset;
+    width: 100vw;
+    height: 100vh;
+  }
 
-/*---CSS DESKTOP--*/
-@media screen and (min-width: 1100px) {
-  .containersm {
+  h1 {
+    margin-top: 0;
+    padding-top: 10vh;
+    color: rgb(27, 89, 118);
+    text-align: center;
+  }
+
+  #toggle {
     display: none;
   }
 
-  .containerlg {
-    /* The image used */
-    display: block;
-    background-image: url(../../assets/car1.png);
-    position: absolute;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    /* Center and scale the image nicely*/
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .containerlg h1 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 3em;
-    color: #22657f;
-  }
-
-  .menubar {
+  .menubarButtons {
     display: flex;
-    width: 100%;
-    align-items: center;
-    margin-top: 80vh;
+    flex-direction: row;
     justify-content: space-around;
+    align-content: flex-end;
+    height: 20%;
+    width: 100%;
+    align-content: center;
+    position: fixed;
+    margin-top: 95vh;
+
   }
 
-  .menubar a {
-    color: #e6e6e6;
-    text-decoration: none;
+  a {
+    color: #f6f5f6;
     font-family: 'Quicksand', 'Open Sans', sans-serif;
-    font-weight: bold;
-    font-size: 36px;
-
+    font-weight: bolder;
+    font-size: 31px;
   }
 
-  .menubar a:hover {
-    color: #22657f;
+  a:hover {
+    color: rgb(27, 89, 118);
+
   }
 }
