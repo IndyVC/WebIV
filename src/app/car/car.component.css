@@ -109,27 +109,28 @@
     color: #f6f5f6;
   }
 
-  .right .text{
-    width:400px;
+  .right .text {
+    width: 400px;
     display: flex;
     flex-direction: column;
   }
 
-  .right .text h1{
-    font-size:48px;
+  .right .text h1 {
+    font-size: 48px;
   }
 
-  .right .text p{
-    font-size:48px;
+  .right .text p {
+    font-size: 48px;
   }
 
-  .buttons{
-    width:400px;
-    display:flex;
+  .buttons {
+    width: 400px;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top:25%;
+    margin-top: 25%;
   }
+
   .buttons .readMoreA {
     font-size: 24px;
 

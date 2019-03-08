@@ -21,7 +21,7 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  /*background-image: url(assets/bgmobile.png);*/
+  background-image: url(assets/bgmobile.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
