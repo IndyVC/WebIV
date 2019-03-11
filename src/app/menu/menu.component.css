@@ -11,6 +11,7 @@
 h1 {
   color: #f6f5f6;
   margin: 10px;
+  text-align: center;
 }
 
 .unfold_more {
@@ -56,13 +57,12 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-content: flex-end;
-    height: 20%;
+    height: 5%;
     width: 100%;
     align-content: center;
-    margin-top: 95vh;
     position: fixed;
-    background-color: rgb(26, 26, 26);
+    color: black;
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 100;
   }
 

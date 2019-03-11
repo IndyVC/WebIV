@@ -8,8 +8,11 @@ import {
   MatIconModule,
   MatTooltipModule,
   MatSidenavModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatInputModule,
+  MatDialogModule
 } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
@@ -21,13 +24,17 @@ import { CompareCarComponent } from './compare-car/compare-car.component';
 import { CarComponent } from './car/car.component';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { LogInComponent } from './log-in/log-in.component';
+import { RegistreerComponent } from './registreer/registreer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     CompareCarComponent,
-    CarComponent
+    CarComponent,
+    LogInComponent,
+    RegistreerComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +51,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule,
     MatTooltipModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatInputModule,
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

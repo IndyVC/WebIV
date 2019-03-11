@@ -13,13 +13,7 @@ export class CompareCarComponent implements OnInit {
   items: Array<any> = [];
   private _cars: Car[];
   constructor(private carService: CarServiceService) {
-    this.items = [
-      (this._cars = carService.cars),
-      { name: 'TEST1' },
-      { name: 'TEST2' },
-      { name: 'TEST3' },
-      { name: 'TEST4' }
-    ];
+    this.items = [(this._cars = carService.cars)];
   }
 
   get cars(): Car[] {

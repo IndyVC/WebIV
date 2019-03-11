@@ -1,0 +1,16 @@
+.authorize {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+@media screen and (min-width:800px) {
+  .authorize {
+    flex-direction: row;
+    align-items: stretch;
+    flex-grow: 10;
+  }
+}

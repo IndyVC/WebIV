@@ -7,6 +7,7 @@
   background: transparent;
   height: 100%;
   width: 100%;
+  margin-bottom: 50px;
 }
 
 .mobile h1 {
@@ -26,7 +27,6 @@
 }
 
 @media only screen and (min-width: 800px) {
-
   .container {
     height: 100vh;
     width: 100vw;
@@ -36,19 +36,22 @@
     background-attachment: fixed;
   }
 
-  .desktop {
-    display: block;
-    background-color: rgb(26, 26, 26);
+  .mobile {
+    background-color: rgba(26, 26, 26, 0.5);
+    height: 50vh;
   }
 
-  .desktop h1 {
+  .desktop {
+    display: none;
+  }
+
+  .mobile h1 {
     font-family: 'Quicksand', 'Open Sans', sans-serif;
     font-weight: bolder;
     font-size: 48px;
     text-align: center;
     color: #f6f5f6;
-    margin: 0;
-    padding: 30px;
+    padding: 40px;
   }
 
   #left,
@@ -67,12 +70,24 @@
 }
 
 @media only screen and (min-width: 1100px) {
-
   .mobile {
     display: none;
   }
 
+
+  .desktop h1 {
+    font-family: 'Quicksand', 'Open Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 48px;
+    text-align: center;
+    color: #f6f5f6;
+    margin: 0;
+    padding: 40px;
+  }
+
   .desktop {
     display: block;
+    background-color: rgba(26, 26, 26, 0.5);
+    height: 50%;
   }
 }
