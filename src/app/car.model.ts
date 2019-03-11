@@ -10,7 +10,8 @@ export class Car {
     private _maxRange: number,
     private _chargeTime: number,
     private _price: number,
-    private _url: string
+    private _url: string,
+    private _visibility: boolean
   ) {
     this._amountOfRatings = 0;
   }
@@ -52,6 +53,10 @@ export class Car {
     return this._url;
   }
 
+  get visibility(): boolean {
+    return this._visibility;
+  }
+
   addRating(value: number) {
     if (this._amountOfRatings == 0) {
       this._rating = value;
@@ -75,7 +80,8 @@ export class Car {
       json.maxRange,
       json.chargeTime,
       json.price,
-      json.url
+      json.url,
+      json.visibility
     );
   }
 }

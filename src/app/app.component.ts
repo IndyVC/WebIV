@@ -9,4 +9,8 @@ export class AppComponent {
   title = 'Electric';
 
   constructor() {}
+
+  log(event) {
+    console.log(event);
+  }
 }

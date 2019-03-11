@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -40,7 +40,7 @@ import { RegistreerComponent } from './registreer/registreer.component';
     BrowserModule,
     MatButtonModule,
     MatCheckboxModule,
-    BrowserAnimationsModule,
+    NoopAnimationsModule,
     MatListModule,
     MatCardModule,
     MatIconModule,

@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-
+  margin-top: 20px;
 }
 
 @media screen and (min-width:800px) {
@@ -12,5 +12,6 @@
     flex-direction: row;
     align-items: stretch;
     flex-grow: 10;
+
   }
 }
