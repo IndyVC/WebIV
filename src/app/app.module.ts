@@ -11,8 +11,7 @@ import {
   MatToolbarModule,
   MatInputModule,
   MatDialogModule,
-  MatSliderModule,
-  MatDialogRef
+  MatSliderModule
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -59,8 +58,7 @@ import { CarActionsComponent } from './car-actions/car-actions.component';
     MatInputModule,
     FormsModule,
     MatDialogModule,
-    MatSliderModule,
-    MatDialogRef
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
