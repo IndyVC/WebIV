@@ -1,22 +1,17 @@
 <div class="container">
   <h1>Compare cars</h1>
   <div class="swipe">
+    <button (click)="swipeLeft()" mat-icon-button id="left">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
     <div class="swipe-box" (swipeleft)="swipeLeft()" (swiperight)="swipeRight()">
       <div>
         <app-car [Car]='CurrentCar'></app-car>
       </div>
     </div>
+    <button (click)="swipeRight()" mat-icon-button id="right">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
   </div>
-  <div class="swipeButtons">
-    <div (click)="swipeLeft()">
-      <a>
-        <mat-icon id="left">keyboard_arrow_left</mat-icon>
-      </a>
-    </div>
-    <div (click)="swipeRight()">
-      <a>
-        <mat-icon id="right">keyboard_arrow_right</mat-icon>
-      </a>
-    </div>
-  </div>
+
 </div>

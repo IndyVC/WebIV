@@ -1,6 +1,9 @@
 <app-menu></app-menu>
-<app-compare-car></app-compare-car>
-<div class="authorize">
+<app-compare-car (EmitCar)="changedCar($event)"></app-compare-car>
+<app-car-actions [currentCar]='currentCar'></app-car-actions>
+
+<!--<div class="authorize">
   <app-log-in></app-log-in>
   <app-registreer></app-registreer>
 </div>
+-->

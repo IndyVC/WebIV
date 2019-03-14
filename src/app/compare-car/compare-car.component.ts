@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CarServiceService } from '../car-service.service';
 import 'hammerjs';
 import 'hammer-timejs';
@@ -13,6 +13,7 @@ export class CompareCarComponent implements OnInit {
   private _cars: Car[];
   CurrentCar: Car;
   index: number = 0;
+  @Output() public EmitCar = new EventEmitter<Car>();
 
   constructor(private carService: CarServiceService) {
     this._cars = carService.cars;
@@ -30,6 +31,7 @@ export class CompareCarComponent implements OnInit {
       this.index++;
     }
     this.CurrentCar = this._cars[this.index];
+    this.emitCar();
   }
 
   swipeRight() {
@@ -39,6 +41,13 @@ export class CompareCarComponent implements OnInit {
       this.index--;
     }
     this.CurrentCar = this._cars[this.index];
+    this.emitCar();
   }
-  ngOnInit() {}
+
+  emitCar() {
+    this.EmitCar.emit(this.CurrentCar);
+  }
+  ngOnInit() {
+    this.emitCar();
+  }
 }

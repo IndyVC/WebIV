@@ -10,13 +10,14 @@ import {
   MatSidenavModule,
   MatToolbarModule,
   MatInputModule,
-  MatDialogModule
+  MatDialogModule,
+  MatSliderModule
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -26,6 +27,7 @@ import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LogInComponent } from './log-in/log-in.component';
 import { RegistreerComponent } from './registreer/registreer.component';
+import { CarActionsComponent } from './car-actions/car-actions.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +36,14 @@ import { RegistreerComponent } from './registreer/registreer.component';
     CompareCarComponent,
     CarComponent,
     LogInComponent,
-    RegistreerComponent
+    RegistreerComponent,
+    CarActionsComponent
   ],
   imports: [
     BrowserModule,
     MatButtonModule,
     MatCheckboxModule,
-    NoopAnimationsModule,
+    BrowserAnimationsModule,
     MatListModule,
     MatCardModule,
     MatIconModule,
@@ -54,7 +57,8 @@ import { RegistreerComponent } from './registreer/registreer.component';
     MatToolbarModule,
     MatInputModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

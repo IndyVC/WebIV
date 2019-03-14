@@ -1,0 +1,56 @@
+/*Mobile first*/
+.container {
+  margin-top: 20px;
+  width: 100vw;
+}
+
+.left {
+  display: none;
+}
+
+.right {
+  background-color: #1a1a1a;
+  color: #f6f5f6;
+  padding: 0 10px 10px 30px;
+}
+
+.right h1 {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin: 0 10px 10px 10px;
+}
+
+.Rate {
+  width: 100vw;
+  background-color: #f6f5f6;
+  color: #1a1a1a;
+  padding: 10px;
+}
+
+.Rate h1 {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+.Rate button {
+  background-color: #22657f;
+  color: #f6f5f6;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.rating {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.comment {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}

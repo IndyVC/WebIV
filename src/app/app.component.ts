@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Car } from './car.model';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Electric';
+  private _currentCar: Car;
 
   constructor() {}
 
-  log(event) {
+  get currentCar(): Car {
+    return this._currentCar;
+  }
+
+  changedCar(event) {
     console.log(event);
+    this._currentCar = event;
   }
 }

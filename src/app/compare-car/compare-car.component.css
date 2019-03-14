@@ -45,34 +45,22 @@ p {
     background-position: center;
   }
 
-
-
-  .swipeButtons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 92%;
-    text-align: center;
-  }
-
-  .swipeButtons::selection {
-    background: none;
-  }
-
-  .swipeButtons a {
-    cursor: pointer;
-  }
-
-
-
-
   #right,
   #left {
     display: inline-flex;
-    font-size: 100px;
     color: #f6f5f6;
+    width: 200px;
+    height: 200px;
+    padding: 0;
   }
 
+  #right mat-icon {
+    font-size: 200px;
+  }
+
+  #left mat-icon {
+    font-size: 200px;
+  }
 
 
 }

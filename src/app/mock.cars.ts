@@ -8,8 +8,7 @@ const cars = [
     maxRange: 400,
     chargeTime: 13.5,
     price: 80.0,
-    url: '../../assets/etron.jpg',
-    visibility:true
+    url: '../../assets/etron.jpg'
   },
   {
     model: 'Model 3',
@@ -18,8 +17,7 @@ const cars = [
     maxRange: 600,
     chargeTime: 3,
     price: 200.0,
-    url: '../../assets/model3.jpg',
-    visibilty:false
+    url: '../../assets/model3.jpg'
   }
 ];
 
