@@ -11,13 +11,14 @@ import {
   MatToolbarModule,
   MatInputModule,
   MatDialogModule,
-  MatSliderModule
+  MatSliderModule,
+  MatDialogRef
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -58,7 +59,8 @@ import { CarActionsComponent } from './car-actions/car-actions.component';
     MatInputModule,
     FormsModule,
     MatDialogModule,
-    MatSliderModule
+    MatSliderModule,
+    MatDialogRef
   ],
   providers: [],
   bootstrap: [AppComponent]

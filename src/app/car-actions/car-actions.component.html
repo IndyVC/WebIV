@@ -1,23 +1,29 @@
 <div class="container">
   <div class="ReadMore">
-    <div class="left">
-      <img src={{currentCar.url}}>
-    </div>
-    <div class="right">
-      <h1>Read more</h1>
-      <h4>Amount of reviews: {{currentCar.amountOfRatings}}</h4>
-      <h4>Max speed: {{currentCar.maxSpeed}}</h4>
-      <h4>Max distance: {{currentCar.maxRange}}</h4>
-      <h4>Charge time: {{currentCar.chargeTime}}</h4>
-      <h4>Comments: {{currentCar.comments}}</h4>
-    </div>
+    <h1>Read more</h1>
+    <h4>Amount of reviews: {{currentCar.amountOfRatings}}</h4>
+    <h4>Max speed: {{currentCar.maxSpeed}}</h4>
+    <h4>Max distance: {{currentCar.maxRange}}</h4>
+    <h4>Charge time: {{currentCar.chargeTime}}</h4>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h4>Comments</h4>
+        </mat-panel-title>
+        <mat-panel-description>
+          {{currentCar.comments}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+
   </div>
   <div class="Rate">
     <h1>Rate</h1>
     <div class="content">
       <div class="rating">
         <h4>Add rate</h4>
-        <mat-slider class="slider" [max]="5" [min]="0" [step]="1" [(ngModel)]="rating" color="accent">
+        <mat-slider [max]="5" [min]="1" [step]="1" [(ngModel)]="rating" thumbLabel color="primary">
         </mat-slider>
       </div>
       <div class="comment">
