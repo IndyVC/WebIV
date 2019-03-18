@@ -1,9 +1,10 @@
-<app-menu></app-menu>
-<app-compare-car (EmitCar)="changedCar($event)"></app-compare-car>
-<app-car-actions [currentCar]='currentCar'></app-car-actions>
-
+<div *ngIf="cars!=null">
+  <app-menu></app-menu>
+  <app-compare-car [cars]="cars" (EmitCar)="changedCar($event)"></app-compare-car>
+  <app-car-actions [currentCar]='currentCar'></app-car-actions>
+</div>
 <!--<div class="authorize">
-  <app-log-in></app-log-in>
+  <app-log-in></app-log-in>2
   <app-registreer></app-registreer>
 </div>
 -->

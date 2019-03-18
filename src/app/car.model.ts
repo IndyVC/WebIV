@@ -10,7 +10,7 @@ export class Car {
     private _maxRange: number,
     private _chargeTime: number,
     private _price: number,
-    private _imageData: string
+    private _image: any
   ) {
     this._amountOfRatings = 0;
   }
@@ -48,8 +48,8 @@ export class Car {
     return this._amountOfRatings;
   }
 
-  get imageData(): string {
-    return this._imageData;
+  get image(): string {
+    return this._image;
   }
 
   addRating(value: number) {
@@ -75,7 +75,7 @@ export class Car {
       json.maxRange,
       json.chargeTime,
       json.price,
-      json.imageData
+      json.image
     );
   }
 }
