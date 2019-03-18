@@ -25,6 +25,10 @@
   margin-right: 50px;
 }
 
+#comment{
+  color:#f6f5f6;
+}
+
 .mat-expansion-panel h4 {
   color: #f6f5f6;
 }

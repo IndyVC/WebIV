@@ -23,5 +23,6 @@ export class CarComponent implements OnInit {
   set car(value: Car) {
     console.log(value + 'CARCOMP');
     this._car = value;
+    console.log(this._car.reviews);
   }
 }

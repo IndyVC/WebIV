@@ -1,5 +1,7 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Car } from '../car.model';
+import { CarServiceService } from '../car-service.service';
+import { Review } from '../review.model';
 
 @Component({
   selector: 'app-car-actions',
@@ -8,8 +10,10 @@ import { Car } from '../car.model';
 })
 export class CarActionsComponent implements OnInit {
   private _currentCar: Car;
-  rating:number;
-  constructor() {}
+  rating: number;
+  comment: string;
+
+  constructor(private _carService: CarServiceService) {}
 
   get currentCar() {
     return this._currentCar;
@@ -22,4 +26,11 @@ export class CarActionsComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  onSubmit() {
+    console.log('CLICKED');
+    var rev = new Review(new Date(), this.comment, this.rating, 'INDy');
+
+    this._carService.postReview$(rev).subscribe();
+  }
 }

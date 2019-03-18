@@ -1,8 +1,6 @@
-export class Car {
-  private _comments: string[];
-  private _rating: number;
-  private _amountOfRatings: number;
+import { Review } from './review.model';
 
+export class Car {
   constructor(
     private _model: string,
     private _brand: string,
@@ -10,9 +8,12 @@ export class Car {
     private _maxRange: number,
     private _chargeTime: number,
     private _price: number,
-    private _image: any
+    private _image: any,
+    private _reviews: Review[],
+    private _rating: number,
+    private _amountOfRatings: number
   ) {
-    this._amountOfRatings = 0;
+    this._reviews.map(rev => Review.fromJSON(rev));
   }
 
   get model(): string {
@@ -36,8 +37,8 @@ export class Car {
     return this._price;
   }
 
-  get comments(): string[] {
-    return this._comments;
+  get reviews(): Review[] {
+    return this._reviews;
   }
 
   get rating(): number {
@@ -52,21 +53,6 @@ export class Car {
     return this._image;
   }
 
-  addRating(value: number) {
-    if (this._amountOfRatings == 0) {
-      this._rating = value;
-      this._amountOfRatings += 1;
-    } else {
-      var totalAmounts: number = this._rating * this.amountOfRatings;
-      var temp: number = (totalAmounts + value) / (this.amountOfRatings + 1);
-      this._rating = temp;
-    }
-  }
-
-  addComment(comment: string) {
-    this._comments.push(comment);
-  }
-
   static fromJSON(json: any): Car {
     return new Car(
       json.model,
@@ -75,7 +61,10 @@ export class Car {
       json.maxRange,
       json.chargeTime,
       json.price,
-      json.image
+      json.image,
+      json.reviews,
+      json.rating,
+      json.amountOfRatings
     );
   }
 }
