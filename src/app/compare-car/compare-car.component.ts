@@ -3,6 +3,8 @@ import { CarServiceService } from '../car-service.service';
 import 'hammerjs';
 import 'hammer-timejs';
 import { Car } from '../car.model';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-compare-car',
@@ -12,12 +14,15 @@ import { Car } from '../car.model';
 export class CompareCarComponent implements OnInit {
   private _cars: Car[];
   CurrentCar: Car;
+  size: number;
   index: number = 0;
+
   @Output() public EmitCar = new EventEmitter<Car>();
 
   constructor(private carService: CarServiceService) {
-    this._cars = carService.cars;
+    carService.cars$.subscribe(cars => (this._cars = cars));
     this.CurrentCar = this._cars[this.index];
+    this.size = this._cars.length;
   }
 
   get cars(): Car[] {
@@ -25,7 +30,7 @@ export class CompareCarComponent implements OnInit {
   }
 
   swipeLeft() {
-    if (this.index == this._cars.length - 1) {
+    if (this.index == this.size - 1) {
       this.index = 0;
     } else {
       this.index++;
@@ -36,7 +41,7 @@ export class CompareCarComponent implements OnInit {
 
   swipeRight() {
     if (this.index == 0) {
-      this.index = this._cars.length - 1;
+      this.index = this.size - 1;
     } else {
       this.index--;
     }

@@ -1,37 +1,20 @@
 import { Injectable } from '@angular/core';
 import { CARS } from './mock.cars';
 import { Car } from './car.model';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.prod';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarServiceService {
-  public currentIndex: number = 0;
-  public size: number;
+  constructor(private http: HttpClient) {}
 
-  private _cars = CARS;
-  constructor() {
-    this.size = this.cars.length;
-  }
-
-  get cars(): Car[] {
-    return this._cars;
-  }
-
-  plus(): number {
-    this.currentIndex++;
-    if (this.currentIndex >= this.size) {
-      return this.currentIndex % this.size;
-    } else {
-      return this.currentIndex;
-    }
-  }
-  min(): number {
-    this.currentIndex--;
-    if (this.currentIndex < 0) {
-      return (this.currentIndex = this.size - 1);
-    } else {
-      return this.currentIndex;
-    }
+  get cars$(): Observable<Car[]> {
+    return this.http
+      .get(`${environment.apiUrl}/Cars`)
+      .pipe(map((list: any[]): Car[] => list.map(c => Car.fromJSON(c))));
   }
 }

@@ -28,6 +28,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LogInComponent } from './log-in/log-in.component';
 import { RegistreerComponent } from './registreer/registreer.component';
 import { CarActionsComponent } from './car-actions/car-actions.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { CarActionsComponent } from './car-actions/car-actions.component';
     MatInputModule,
     FormsModule,
     MatDialogModule,
-    MatSliderModule
+    MatSliderModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
