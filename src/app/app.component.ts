@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Car } from './car.model';
-import { CarServiceService } from './car-service.service';
+import {CarDataService} from './car-data.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -14,7 +14,7 @@ export class AppComponent {
   public cars: Car[];
   public waitForCars: Observable<Car[]> = this._carService.cars$;
 
-  constructor(private _carService: CarServiceService) {
+  constructor(private _carService: CarDataService) {
     _carService.cars$.subscribe(cars => {
       console.log(cars);
       this.cars = cars;

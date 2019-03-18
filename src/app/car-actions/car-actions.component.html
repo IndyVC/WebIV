@@ -1,46 +1,49 @@
 <div class="container">
-  <div class="ReadMore">
-    <h1>Read more</h1>
-    <h4>Model: {{currentCar.model}} By {{currentCar.brand}}</h4>
-    <h4>Price: $ {{currentCar.price}}</h4>
-    <h4>Rating: {{currentCar.rating}}</h4>
-    <h4>Amount of reviews: {{currentCar.amountOfRatings}}</h4>
-    <h4>Max speed: {{currentCar.maxSpeed}} km/h</h4>
-    <h4>Max distance: {{currentCar.maxRange}} km</h4>
-    <h4>Charge time: {{currentCar.chargeTime}} hours</h4>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <h4>Comments</h4>
-        </mat-panel-title>
-        <mat-panel-description>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <div *ngFor="let rev of currentCar.reviews">
-        <p id="comment"> {{rev.comment}}({{rev.rating}}) ~ {{rev.customerName}}</p>
-      </div>
-    </mat-expansion-panel>
+  <img [src]="'data:image/jpg;base64,'+currentCar.image" />
+  <div class="form">
+    <div class="ReadMore">
+      <h1>Read more</h1>
+      <h4>Model: {{currentCar.model}} By {{currentCar.brand}}</h4>
+      <h4>Price: $ {{currentCar.price}}</h4>
+      <h4>Rating: {{currentCar.rating}}</h4>
+      <h4>Amount of reviews: {{currentCar.amountOfRatings}}</h4>
+      <h4>Max speed: {{currentCar.maxSpeed}} km/h</h4>
+      <h4>Max distance: {{currentCar.maxRange}} km</h4>
+      <h4>Charge time: {{currentCar.chargeTime}} hours</h4>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h4 id="h4">Comments</h4>
+          </mat-panel-title>
+          <mat-panel-description>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngFor="let rev of currentCar.reviews">
+          <p id="comment"> {{rev.comment}}({{rev.rating}}) ~ {{rev.customerName}}</p>
+        </div>
+      </mat-expansion-panel>
 
 
-  </div>
-  <div class="Rate">
-    <h1>Rate</h1>
-    <div class="content">
-
-      <div class="rating">
-        <h4>Add rate</h4>
-        <mat-slider [max]="5" [min]="1" [step]="1" thumbLabel color="primary" [(ngModel)]="rating">
-        </mat-slider>
-      </div>
-      <div class="comment">
-        <h4>Add comment</h4>
-        <mat-form-field>
-          <input matInput type="text" [(ngModel)]="comment">
-        </mat-form-field>
-      </div>
     </div>
-    <button (click)="onSubmit()" mat-button>
-      Rate
-    </button>
+    <div class="Rate">
+      <h1>Rate</h1>
+      <div class="content">
+
+        <div class="rating">
+          <h4>Add rate</h4>
+          <mat-slider [max]="5" [min]="1" [step]="1" thumbLabel color="primary" [(ngModel)]="rating">
+          </mat-slider>
+        </div>
+        <div class="comment">
+          <h4>Add comment</h4>
+          <mat-form-field>
+            <input matInput type="text" [(ngModel)]="comment">
+          </mat-form-field>
+        </div>
+      </div>
+      <button (click)="onSubmit()" mat-button>
+        Rate
+      </button>
+    </div>
   </div>
 </div>

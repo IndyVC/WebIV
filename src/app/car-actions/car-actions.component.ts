@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Car } from '../car.model';
-import { CarServiceService } from '../car-service.service';
+import { CarDataService } from '../car-data.service';
 import { Review } from '../review.model';
 
 @Component({
@@ -13,7 +13,7 @@ export class CarActionsComponent implements OnInit {
   rating: number;
   comment: string;
 
-  constructor(private _carService: CarServiceService) {}
+  constructor(private _carService: CarDataService) {}
 
   get currentCar() {
     return this._currentCar;

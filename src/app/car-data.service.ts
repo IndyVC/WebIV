@@ -10,7 +10,7 @@ import { Review } from './review.model';
 @Injectable({
   providedIn: 'root'
 })
-export class CarServiceService {
+export class CarDataService {
   constructor(private http: HttpClient) {}
 
   get cars$(): Observable<Car[]> {

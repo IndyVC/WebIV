@@ -5,6 +5,10 @@
   margin-top: 30px;
 }
 
+img {
+  display: none;
+}
+
 /*READMORE-PART*/
 .ReadMore {
   background-color: #1a1a1a;
@@ -25,8 +29,8 @@
   margin-right: 50px;
 }
 
-#comment{
-  color:#f6f5f6;
+#comment {
+  color: #f6f5f6;
 }
 
 .mat-expansion-panel h4 {
@@ -70,7 +74,7 @@
 }
 
 .rating .mat-slider {
-  width: 310px;
+  width: 200px;
   position: absolute;
   right: 10px;
 }
@@ -83,7 +87,7 @@
 }
 
 .comment .mat-form-field {
-  width: 300px;
+  width: 200px;
   position: absolute;
   right: 10px;
 }
@@ -91,38 +95,65 @@
 
 @media screen and (min-width:800px) {
   .container {
+    background-image: url(../../assets/teslacar.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .ReadMore {
+    width: 100%;
+    background-color: #f6f5f6;
+    color: #1a1a1a;
+  }
+
+  .mat-expansion-panel,
+  #h4,
+  #comment {
+    background-color: #f6f5f6;
+    color: #1a1a1a;
+  }
+
+  .Rate {
+    width: 100%;
+    right: 0;
+    margin-right: 15px;
+
+  }
+
+  .container {
     margin-top: 0px;
     width: 100vw;
     height: 94vh;
-    background-image: url(../../assets/tokyo2.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
     position: relative;
   }
 
-  .ReadMore {
-    width: 60vw;
+  .form {
+    display: flex;
+    flex-direction: column;
     position: absolute;
+    width: 40%;
+    right: 50px;
     top: 0;
-    left: 0;
-  }
-
-  .Rate {
-    width: 60vw;
-    position: absolute;
-    bottom: 0;
-    right: 0;
   }
 }
 
-@media screen and (min-width:1100px) {
+@media screen and (min-width:1500px) {
+  img {
+    height: 100vh;
+    display: block;
+    width: 60%;
+  }
+
+  .form {
+    height: 100vh;
+  }
+
   .Rate {
-    width: 45vw;
+    height: 30%;
   }
 
   .ReadMore {
-    width: 45vw;
+    height: 70%;
   }
 }
