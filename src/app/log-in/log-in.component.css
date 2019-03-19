@@ -1,15 +1,26 @@
 /*---Mobile first---*/
-mat-card {
-  margin: 0 20px 20px 20px;
-  min-width: 300px;
+.container {
+  position: relative;
 }
 
-mat-card-content {
+.mat-card {
+  width: 80vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 200;
+}
+
+.closeBtn {
+  float: right;
+}
+
+.mat-card-content {
   display: flex;
   flex-direction: column;
 }
 
-mat-card-title {
+.mat-card-title {
   color: rgb(27, 89, 118);
 }
 
@@ -37,7 +48,7 @@ mat-card-title {
     width: 50%;
   }
 
-  mat-card {
+  .mat-card {
     width: 40vw;
   }
 }

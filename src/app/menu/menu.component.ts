@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { LogInComponent } from '../log-in/log-in.component';
 
 @Component({
   selector: 'app-menu',
@@ -6,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  constructor() {}
+  @ViewChild(LogInComponent) loginComponent: LogInComponent;
 
+  constructor() {}
   ngOnInit() {}
 
-  gotOutput() {
-    console.log('REACHEd');
+  toggleLogin() {
+    this.loginComponent.toggle();
   }
 }

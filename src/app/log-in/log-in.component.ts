@@ -7,16 +7,16 @@ import { CarDataService } from '../car-data.service';
   styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent implements OnInit {
+  public show: boolean = false;
   constructor(private _carService: CarDataService) {}
 
   ngOnInit() {}
 
-  Validate(email: HTMLInputElement, password: HTMLInputElement) {
-    console.log('CLICKED');
-    var LoginDTO = {
-      email: email.value,
-      password: password.value
-    };
-    //this._carService.login$(LoginDTO).subscribe(res => console.log(res));
+  toggle() {
+    if (this.show) {
+      this.show = false;
+    } else {
+      this.show = true;
+    }
   }
 }

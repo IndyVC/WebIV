@@ -49,11 +49,10 @@ img {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   margin-top: 0px;
-
 }
 
 .Rate button {
-  background-color: #1565C0;
+  background-color: #1565c0;
   color: #f6f5f6;
   width: 50%;
   display: block;
@@ -92,8 +91,7 @@ img {
   right: 10px;
 }
 
-
-@media screen and (min-width:800px) {
+@media screen and (min-width: 800px) {
   .container {
     background-image: url(../../assets/teslacar.jpg);
     background-repeat: no-repeat;
@@ -110,15 +108,17 @@ img {
   .mat-expansion-panel,
   #h4,
   #comment {
-    background-color: #f6f5f6;
     color: #1a1a1a;
+  }
+
+  .mat-expansion-panel {
+    background-color: #f6f5f6;
   }
 
   .Rate {
     width: 100%;
     right: 0;
     margin-right: 15px;
-
   }
 
   .container {
@@ -138,7 +138,7 @@ img {
   }
 }
 
-@media screen and (min-width:1500px) {
+@media screen and (min-width: 1500px) {
   img {
     height: 100vh;
     display: block;
@@ -151,9 +151,11 @@ img {
 
   .Rate {
     height: 30%;
+    padding-left: 40px;
   }
 
   .ReadMore {
     height: 70%;
+    padding-left: 40px;
   }
 }

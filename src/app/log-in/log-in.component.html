@@ -1,5 +1,8 @@
-<div class="container">
-  <mat-card>
+<div class="container" *ngIf="show">
+  <mat-card id="card">
+    <button mat-icon-button class="closeBtn" (click)="toggle()">
+      <mat-icon>close</mat-icon>
+    </button>
     <mat-card-header>
       <mat-card-title>
         <h1>Log In</h1>
@@ -13,7 +16,7 @@
         <input matInput placeholder="Password" type="text" #password>
       </mat-form-field>
       <div class="buttons">
-        <button mat-raised-button (click)="Validate(username,password)">
+        <button mat-raised-button>
           Log In
         </button>
         <a mat-raised-button>
