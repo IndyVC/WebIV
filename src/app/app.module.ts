@@ -13,7 +13,7 @@ import {
   MatDialogModule,
   MatSliderModule
 } from '@angular/material';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
@@ -26,9 +26,10 @@ import { CarComponent } from './car/car.component';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LogInComponent } from './log-in/log-in.component';
-import { RegistreerComponent } from './registreer/registreer.component';
+import { RegisterComponent } from './register/register.component';
 import { CarActionsComponent } from './car-actions/car-actions.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PlanRouteComponent } from './plan-route/plan-route.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +38,9 @@ import { HttpClientModule } from '@angular/common/http';
     CompareCarComponent,
     CarComponent,
     LogInComponent,
-    RegistreerComponent,
-    CarActionsComponent
+    RegisterComponent,
+    CarActionsComponent,
+    PlanRouteComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatToolbarModule,
     MatInputModule,
-    FormsModule,
+    ReactiveFormsModule,
     MatDialogModule,
     MatSliderModule,
     HttpClientModule

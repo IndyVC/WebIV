@@ -1,15 +1,16 @@
 <app-log-in></app-log-in>
+<app-registreer></app-registreer>
 
 <div class="container">
   <div class="menubar">
     <button mat-icon-button [matMenuTriggerFor]="menu" id="toggle">
       <mat-icon class="unfold_more">more_vert</mat-icon>
     </button>
-    <div class="menubarButtons">
+    <div class="nav">
       <a href="#compareCar">Compare cars</a>
       <a href="#">Plan my route</a>
-      <a (click)="toggleLogin()">Log in</a>
-      <a href="#">Registreer</a>
+      <a href="#" (click)="toggleLogin()">Log in</a>
+      <a href="#" (click)="toggleRegister()">Register</a>
     </div>
   </div>
   <h1>Following the future is not always easy.</h1>
@@ -21,11 +22,11 @@
       <button mat-menu-item>
         <a href="#">Plan my route</a>
       </button>
-      <button mat-menu-item>
-        <a (click)="toggleLogin()">Log in</a>
+      <button mat-menu-item (click)="toggleLogin()">
+        <a>Log in</a>
       </button>
-      <button mat-menu-item>
-        <a href="#">Registreer</a>
+      <button mat-menu-item (click)="toggleRegister()">
+        <a href="#">Register</a>
       </button>
     </mat-menu>
   </div>

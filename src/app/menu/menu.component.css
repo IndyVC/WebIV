@@ -1,6 +1,6 @@
 /*mobile First*/
 
-.menubarButtons {
+.nav {
   display: none;
 }
 
@@ -23,7 +23,8 @@ h1 {
 a {
   text-decoration: none;
   font-family: 'Open Sans', sans-serif;
-  color: #536DFE;
+  color: #1a1a1a;
+  font-weight: bold;
 }
 
 /*--DESKTOP--*/
@@ -53,17 +54,18 @@ a {
     display: none;
   }
 
-  .menubarButtons {
-    display: flex;
+  .nav {
     flex-direction: row;
     justify-content: space-around;
-    height: 5%;
+    height: 4%;
     width: 100%;
     align-content: center;
     position: fixed;
     background-color: #1a1a1aa1;
     z-index: 100;
+    display: flex;
   }
+
 
   a {
     color: #f6f5f6;

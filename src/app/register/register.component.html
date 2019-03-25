@@ -1,5 +1,8 @@
-<div class="container">
+<div class="container" *ngIf="show">
   <mat-card>
+    <button mat-icon-button class="closeBtn" (click)="toggle()">
+      <mat-icon>close</mat-icon>
+    </button>
     <mat-card-header>
       <mat-card-title>
         <h1>Registreer</h1>
@@ -17,7 +20,7 @@
       </mat-form-field>
       <div class="buttons">
         <button mat-raised-button>
-          Registreer
+          Register
         </button>
       </div>
     </mat-card-content>

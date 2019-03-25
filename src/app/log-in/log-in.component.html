@@ -9,20 +9,28 @@
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <mat-form-field>
-        <input matInput placeholder="Email" type="text" #username>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Password" type="text" #password>
-      </mat-form-field>
-      <div class="buttons">
-        <button mat-raised-button>
-          Log In
-        </button>
-        <a mat-raised-button>
-          Nog geen account?
-        </a>
-      </div>
+      <form [formGroup]="login" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <input matInput placeholder="Email" area-label="Email" type="text" formControlName="email">
+          <mat-error *ngIf="login.get('email')['errors']">
+            {{getErrorMessage(login.get('email')['errors'])}}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Password" type="text" formControlName="password">
+          <mat-error *ngIf="login.get('password')['errors']">
+            {{getErrorMessage(login.get('password')['errors'])}}
+          </mat-error>
+        </mat-form-field>
+        <div class="buttons">
+          <button mat-raised-button type="submit" [disabled]='!login.valid'>
+            Log In
+          </button>
+          <a mat-raised-button>
+            Nog geen account?
+          </a>
+        </div>
+      </form>
     </mat-card-content>
   </mat-card>
 </div>

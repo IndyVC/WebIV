@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Car } from '../car.model';
 import { CarDataService } from '../car-data.service';
-import { Review } from '../review.model';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-car-actions',
@@ -10,10 +10,9 @@ import { Review } from '../review.model';
 })
 export class CarActionsComponent implements OnInit {
   private _currentCar: Car;
-  rating: number;
-  comment: string;
+  public review: FormGroup;
 
-  constructor(private _carService: CarDataService) {}
+  constructor(private _carService: CarDataService, private _fb: FormBuilder) {}
 
   get currentCar() {
     return this._currentCar;
@@ -25,12 +24,18 @@ export class CarActionsComponent implements OnInit {
     console.log(value.model + 'readMore');
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.review = this._fb.group({
+      rating: this._fb.control('', Validators.required),
+      comment: this._fb.control('', Validators.required)
+    });
+  }
 
   onSubmit() {
-    console.log('CLICKED');
-    var rev = new Review(new Date(), this.comment, this.rating, 'INDy');
-
-    this._carService.postReview$(rev).subscribe();
+    console.log(this.review.value);
+    var model = this.currentCar.model;
+    this._carService.postReview$(model,this.review.value).subscribe(res => {
+      console.log(res);
+    });
   }
 }

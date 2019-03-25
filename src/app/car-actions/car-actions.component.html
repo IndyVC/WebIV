@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="ReadMore">
   <img [src]="'data:image/jpg;base64,'+currentCar.image" />
   <div class="form">
     <div class="ReadMore">
@@ -29,21 +29,23 @@
       <h1>Rate</h1>
       <div class="content">
 
-        <div class="rating">
-          <h4>Add rate</h4>
-          <mat-slider [max]="5" [min]="1" [step]="1" thumbLabel color="primary" [(ngModel)]="rating">
-          </mat-slider>
-        </div>
-        <div class="comment">
-          <h4>Add comment</h4>
-          <mat-form-field>
-            <input matInput type="text" [(ngModel)]="comment">
-          </mat-form-field>
-        </div>
+        <form [formGroup]="review" (ngSubmit)="onSubmit()">
+          <div class="rating">
+            <h4>Add rate</h4>
+            <mat-slider [max]="5" [min]="1" [step]="1" thumbLabel color="primary" formControlName="rating">
+            </mat-slider>
+          </div>
+          <div class="comment">
+            <h4>Add comment</h4>
+            <mat-form-field>
+              <input matInput type="text" formControlName="comment">
+            </mat-form-field>
+          </div>
+          <button mat-button>
+            Rate
+          </button>
+        </form>
       </div>
-      <button (click)="onSubmit()" mat-button>
-        Rate
-      </button>
     </div>
   </div>
 </div>

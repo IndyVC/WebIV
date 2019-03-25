@@ -1,14 +1,10 @@
 export class Review {
   constructor(
-    private _datePosted: Date,
     private _comment: string,
     private _rating: number,
-    private _customerName: string
+    private _customerName: string,
+    private _datePosted: Date
   ) {}
-
-  get datePosted() {
-    return this._datePosted;
-  }
 
   get comment() {
     return this._comment;
@@ -22,12 +18,16 @@ export class Review {
     return this._customerName;
   }
 
+  get datePosted() {
+    return this._datePosted;
+  }
+
   static fromJSON(json: any): Review {
     return new Review(
-      json.datePosted,
       json.comment,
       json.rating,
-      json.customerName
+      json.customerName,
+      json.datePosted
     );
   }
 }

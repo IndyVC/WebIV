@@ -15,7 +15,7 @@
   float: right;
 }
 
-.mat-card-content form{
+.mat-card-content {
   display: flex;
   flex-direction: column;
 }
