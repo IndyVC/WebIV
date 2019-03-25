@@ -17,7 +17,7 @@
   color: #f6f5f6;
 }
 
-.mat-card-content {
+.mat-card-content form {
   display: flex;
   flex-direction: column;
 }
@@ -38,11 +38,19 @@
 }
 
 .mat-card-content::ng-deep.mat-form-field-label {
-  color: #f6f5f6 !important;
+  color: #f6f5f6;
+}
+
+.mat-card-content::ng-deep.mat-input-element {
+  color: #f6f5f6;
 }
 
 .mat-card-content::ng-deep.mat-form-field-underline {
-  background-color: #f6f5f6 !important;
+  background-color: #f6f5f6;
+}
+
+.mat-form-field {
+  padding-bottom: 15px;
 }
 
 @media only screen and (min-width: 800px) {

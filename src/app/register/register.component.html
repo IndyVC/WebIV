@@ -9,20 +9,37 @@
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <mat-form-field>
-        <input matInput placeholder="Email" type="text" #username>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Password" type="text" #password>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Confirm password" type="text" #confirmPassword>
-      </mat-form-field>
-      <div class="buttons">
-        <button mat-raised-button>
-          Register
-        </button>
-      </div>
+      <form [formGroup]="register" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <input matInput placeholder="Email" type="text" formControlName="email">
+          <mat-error *ngIf="register.get('email')['errors']">
+            {{getErrorMessage(register.get('email')['errors'])}}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Password" type="text" formControlName="password">
+          <mat-error *ngIf="register.get('password')['errors']">
+            {{getErrorMessage(register.get('password')['errors'])}}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="First name" type="text" formControlName="firstName">
+          <mat-error *ngIf="register.get('firstName')['errors']">
+            {{getErrorMessage(register.get('firstName')['errors'])}}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Last name" type="text" formControlName="lastName">
+          <mat-error *ngIf="register.get('lastName')['errors']">
+            {{getErrorMessage(register.get('lastName')['errors'])}}
+          </mat-error>
+        </mat-form-field>
+        <div class="buttons">
+          <button mat-raised-button>
+            Register
+          </button>
+        </div>
+      </form>
     </mat-card-content>
   </mat-card>
 </div>

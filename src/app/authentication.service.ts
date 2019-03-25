@@ -14,4 +14,10 @@ export class AuthenticationService {
       responseType: 'text'
     });
   }
+
+  register$(register: FormGroup) {
+    return this.http.post(`${environment.apiUrl}/Account/Register`, register, {
+      responseType: 'text'
+    });
+  }
 }
