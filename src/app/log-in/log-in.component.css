@@ -9,19 +9,21 @@
   position: fixed;
   top: 0;
   z-index: 200;
+  background-color: rgb(46, 46, 46);
 }
 
 .closeBtn {
   float: right;
+  color: #f6f5f6;
 }
 
-.mat-card-content form{
+.mat-card-content form {
   display: flex;
   flex-direction: column;
 }
 
 .mat-card-title {
-  color: rgb(27, 89, 118);
+  color: #f6f5f6;
 }
 
 .buttons {
@@ -31,16 +33,24 @@
 }
 
 .buttons button {
-  background-color: rgb(27, 89, 118);
-  color: #f6f5f6;
+  color: #1a1a1a;
+  background-color: #f6f5f6;
 }
 
 .buttons a {
   margin-left: 10%;
-  background-color: rgb(27, 89, 118);
-  color: #f6f5f6;
+  color: #1a1a1a;
+  background-color: #f6f5f6;
   min-width: 150px;
 
+}
+
+.mat-card-content::ng-deep.mat-form-field-label {
+  color: #f6f5f6 !important;
+}
+
+.mat-card-content::ng-deep.mat-form-field-underline {
+  background-color: #f6f5f6 !important;
 }
 
 @media only screen and (min-width: 800px) {

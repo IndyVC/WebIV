@@ -26,15 +26,15 @@ export class CarActionsComponent implements OnInit {
 
   ngOnInit() {
     this.review = this._fb.group({
-      rating: this._fb.control('', Validators.required),
-      comment: this._fb.control('', Validators.required)
+      rating: this._fb.control('', [Validators.required]),
+      comment: this._fb.control('', [Validators.required])
     });
   }
 
   onSubmit() {
     console.log(this.review.value);
     var model = this.currentCar.model;
-    this._carService.postReview$(model,this.review.value).subscribe(res => {
+    this._carService.postReview$(model, this.review.value).subscribe(res => {
       console.log(res);
     });
   }

@@ -9,6 +9,7 @@ img {
   display: none;
 }
 
+
 /*READMORE-PART*/
 .ReadMore {
   background-color: #1a1a1a;
@@ -78,14 +79,14 @@ img {
   right: 10px;
 }
 
-.comment {
+.commentClass {
   width: 100%;
   display: flex;
   flex-direction: row;
   position: relative;
 }
 
-.comment .mat-form-field {
+.commentClass .mat-form-field {
   width: 200px;
   position: absolute;
   right: 10px;

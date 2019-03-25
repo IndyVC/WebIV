@@ -29,7 +29,6 @@ import { LogInComponent } from './log-in/log-in.component';
 import { RegisterComponent } from './register/register.component';
 import { CarActionsComponent } from './car-actions/car-actions.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PlanRouteComponent } from './plan-route/plan-route.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +39,6 @@ import { PlanRouteComponent } from './plan-route/plan-route.component';
     LogInComponent,
     RegisterComponent,
     CarActionsComponent,
-    PlanRouteComponent
   ],
   imports: [
     BrowserModule,
