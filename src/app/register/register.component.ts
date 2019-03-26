@@ -16,6 +16,10 @@ export class RegisterComponent implements OnInit {
     private _fb: FormBuilder
   ) {}
 
+  /*
+  source regex:
+  https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
+  */
   ngOnInit() {
     this.register = this._fb.group({
       email: this._fb.control('', [Validators.required, Validators.email]),

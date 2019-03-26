@@ -10,8 +10,8 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 })
 export class CarComponent implements OnInit {
   private _car: Car;
-  imagePath: SafeUrl;
-  constructor(private sanitizer: DomSanitizer) {}
+  public imagePath: SafeUrl;
+  constructor(public sanitizer: DomSanitizer) {}
 
   ngOnInit() {}
 
@@ -21,8 +21,6 @@ export class CarComponent implements OnInit {
 
   @Input('car')
   set car(value: Car) {
-    console.log(value + 'CARCOMP');
     this._car = value;
-    console.log(this._car.reviews);
   }
 }

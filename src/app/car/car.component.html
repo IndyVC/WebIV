@@ -1,6 +1,6 @@
 <div class="container">
   <div class="left">
-    <img [src]="'data:image/jpg;base64,'+car.image" />
+    <img [src]="sanitizer.bypassSecurityTrustUrl(car.image)" />
   </div>
   <div class="right">
     <div class="text">

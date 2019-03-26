@@ -1,7 +1,11 @@
 <div *ngIf="(waitForCars|async);else loading">
+
   <app-menu></app-menu>
-  <app-compare-car [cars]="cars" (EmitCar)="changedCar($event)"></app-compare-car>
-  <app-car-actions [currentCar]='currentCar'></app-car-actions>
+  <div>
+    <app-compare-car [cars]="cars" (EmitCar)="changedCar($event)"></app-compare-car>
+    <app-car-actions [currentCar]='currentCar'></app-car-actions>
+  </div>
+  <app-add-car></app-add-car>
 </div>
 
 <ng-template #loading>

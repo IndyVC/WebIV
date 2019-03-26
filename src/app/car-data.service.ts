@@ -26,4 +26,12 @@ export class CarDataService {
       })
     });
   }
+
+  postCar$(payload: FormGroup) {
+    return this.http.post(`${environment.apiUrl}/Cars`, payload, {
+      headers: new HttpHeaders({
+        Authorization: 'bearer ' + localStorage.getItem('token')
+      })
+    });
+  }
 }

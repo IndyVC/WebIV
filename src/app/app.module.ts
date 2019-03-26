@@ -14,6 +14,7 @@ import {
   MatSliderModule
 } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
@@ -29,6 +30,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { RegisterComponent } from './register/register.component';
 import { CarActionsComponent } from './car-actions/car-actions.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddCarComponent } from './add-car/add-car.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     LogInComponent,
     RegisterComponent,
     CarActionsComponent,
+    AddCarComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     MatDialogModule,
     MatSliderModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialFileInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

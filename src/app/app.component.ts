@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Car } from './car.model';
-import {CarDataService} from './car-data.service';
+import { CarDataService } from './car-data.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -29,5 +29,9 @@ export class AppComponent {
     console.log(event as Car);
     console.log('CAR');
     this._currentCar = event;
+  }
+
+  isEmpty() {
+    return this.cars.values.length == 0 || this.cars == null;
   }
 }

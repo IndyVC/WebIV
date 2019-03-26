@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Car } from '../car.model';
 import { CarDataService } from '../car-data.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-car-actions',
@@ -12,7 +13,7 @@ export class CarActionsComponent implements OnInit {
   private _currentCar: Car;
   public review: FormGroup;
 
-  constructor(private _carService: CarDataService, private _fb: FormBuilder) {}
+  constructor(private _carService: CarDataService, private _fb: FormBuilder, public sanitizer: DomSanitizer) {}
 
   get currentCar() {
     return this._currentCar;
@@ -21,7 +22,6 @@ export class CarActionsComponent implements OnInit {
   @Input('currentCar')
   set currentCar(value: Car) {
     this._currentCar = value;
-    console.log(value.model + 'readMore');
   }
 
   ngOnInit() {

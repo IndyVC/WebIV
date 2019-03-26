@@ -1,14 +1,12 @@
 /*Mobile first*/
 .container {
-  margin-top: 20px;
   width: 100vw;
-  margin-top: 30px;
+  margin: 0;
 }
 
 img {
   display: none;
 }
-
 
 /*READMORE-PART*/
 .ReadMore {
@@ -40,7 +38,8 @@ img {
 
 /*RATE-PART*/
 .Rate {
-  width: 96vw;
+  box-sizing: border-box;
+  width: 100vw;
   background-color: #f6f5f6;
   color: #1a1a1a;
   padding: 20px;
@@ -92,76 +91,40 @@ img {
   right: 10px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width:800px) {
   .container {
-    background-image: url(../../assets/teslacar.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .ReadMore {
-    width: 100%;
-    background-color: #f6f5f6;
-    color: #1a1a1a;
-  }
-
-  .ReadMore h1 {
-    padding-top: 5%;
-  }
-
-  .mat-expansion-panel,
-  #h4,
-  #comment {
-    color: #1a1a1a;
-  }
-
-  .mat-expansion-panel {
-    background-color: #f6f5f6;
-  }
-
-  .Rate {
-    width: 100%;
-    right: 0;
-    margin-right: 15px;
-  }
-
-  .container {
-    margin-top: 0px;
     width: 100vw;
-    height: 94vh;
+    height: 100vh;
     position: relative;
-  }
-
-  .form {
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    width: 40%;
-    right: 50px;
-    top: 0;
-  }
-}
-
-@media screen and (min-width: 1500px) {
-  img {
-    height: 100vh;
-    display: block;
-    width: 70%;
+    flex-direction: row;
+    flex-grow: 2;
   }
 
   .form {
-    height: 100vh;
-    width: 30%;
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #f6f5f6;
   }
 
   .Rate {
-    height: 30%;
-    padding-left: 40px;
+    width: 100%;
   }
 
   .ReadMore {
-    height: 70%;
-    padding-left: 40px;
+    width: 100%;
+    flex-grow: 2;
+  }
+
+  img {
+    width: 60%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 }
