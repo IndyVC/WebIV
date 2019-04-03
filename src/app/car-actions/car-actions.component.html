@@ -1,7 +1,7 @@
 <div class="container">
   <img [src]="sanitizer.bypassSecurityTrustUrl(currentCar.image)" />
   <div class="form">
-    <div class="ReadMore">
+    <div class="ReadMore" id="ReadMore">
       <h1>Read more</h1>
       <h4>Model: {{currentCar.model}} By {{currentCar.brand}}</h4>
       <h4>Price: $ {{currentCar.price}}</h4>

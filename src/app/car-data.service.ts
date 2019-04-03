@@ -34,4 +34,20 @@ export class CarDataService {
       })
     });
   }
+
+  deleteCar$(modelCar: string) {
+    return this.http.delete(`${environment.apiUrl}/Cars/${modelCar}`, {
+      headers: new HttpHeaders({
+        Authorization: 'bearer ' + localStorage.getItem('token')
+      })
+    });
+  }
+
+  changeCar$(modelCar: string, payload: FormGroup) {
+    return this.http.put(`${environment.apiUrl}/Cars/${modelCar}`, payload, {
+      headers: new HttpHeaders({
+        Authorization: 'bearer ' + localStorage.getItem('token')
+      })
+    });
+  }
 }

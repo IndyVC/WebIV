@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CarDataService } from '../car-data.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Car } from '../car.model';
 
 @Component({
   selector: 'app-add-car',
@@ -11,6 +12,8 @@ export class AddCarComponent implements OnInit {
   public newCar: FormGroup;
   public fileReader: FileReader = new FileReader();
   public image;
+  @Input() public currentCar: Car;
+
   constructor(private _carService: CarDataService, private _fb: FormBuilder) {}
 
   ngOnInit() {
@@ -45,6 +48,24 @@ export class AddCarComponent implements OnInit {
     this._carService.postCar$(this.newCar.value).subscribe(newCar => {
       console.log(newCar);
     });
+  }
+
+  changeCar() {
+    console.log(this.newCar.get('model').value);
+    this._carService
+      .changeCar$(this.newCar.get('model').value, this.newCar.value)
+      .subscribe(changedCar => {
+        console.log(changedCar);
+      });
+  }
+
+  deleteCar() {
+    console.log(this.newCar.get('model').value);
+    this._carService
+      .deleteCar$(this.newCar.get('model').value)
+      .subscribe(deletedCar => {
+        console.log(deletedCar);
+      });
   }
 
   getErrorMessage(errors: any) {

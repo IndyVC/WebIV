@@ -16,6 +16,7 @@ h1 {
 
 .container button {
   color: #1a1a1a;
+  margin-top: 15px;
 }
 
 .form {
@@ -40,7 +41,7 @@ h1 {
 
 @media screen and (min-width: 800px) {
   .container {
-    background-image: url(../../assets/mustang.jpg);
+    background-image: url(../../assets/addCarBg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

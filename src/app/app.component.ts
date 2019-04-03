@@ -15,7 +15,7 @@ export class AppComponent {
   public waitForCars: Observable<Car[]> = this._carService.cars$;
 
   constructor(private _carService: CarDataService) {
-    _carService.cars$.subscribe(cars => {
+    this.waitForCars.subscribe(cars => {
       console.log(cars);
       this.cars = cars;
     });
@@ -27,7 +27,6 @@ export class AppComponent {
 
   changedCar(event) {
     console.log(event as Car);
-    console.log('CAR');
     this._currentCar = event;
   }
 

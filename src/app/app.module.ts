@@ -11,7 +11,8 @@ import {
   MatToolbarModule,
   MatInputModule,
   MatDialogModule,
-  MatSliderModule
+  MatSliderModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
@@ -64,7 +65,8 @@ import { AddCarComponent } from './add-car/add-car.component';
     MatDialogModule,
     MatSliderModule,
     HttpClientModule,
-    MaterialFileInputModule
+    MaterialFileInputModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
