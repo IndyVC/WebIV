@@ -1,0 +1,50 @@
+<div class="container">
+  <h1>Add the newest electric car</h1>
+  <form [formGroup]="newCar" (ngSubmit)="onSubmit()" class="form">
+    <mat-form-field>
+      <input matInput placeholder="Model" area-label="Model" type="text" formControlName="model" />
+      <mat-error *ngIf="newCar.get('model')['errors']">
+        {{ getErrorMessage(newCar.get('model')['errors']) }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Brand" area-label="Brand" type="text" formControlName="brand" />
+      <mat-error *ngIf="newCar.get('brand')['errors']">
+        {{ getErrorMessage(newCar.get('brand')['errors']) }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Price" area-label="Price" type="text" formControlName="price" />
+      <mat-error *ngIf="newCar.get('price')['errors']">
+        {{ getErrorMessage(newCar.get('price')['errors']) }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Max Speed" area-label="Max Speed" type="text" formControlName="maxSpeed" />
+      <mat-error *ngIf="newCar.get('maxSpeed')['errors']">
+        {{ getErrorMessage(newCar.get('maxSpeed')['errors']) }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Max Range" area-label="Max Range" type="text" formControlName="maxRange" />
+      <mat-error *ngIf="newCar.get('maxRange')['errors']">
+        {{ getErrorMessage(newCar.get('maxRange')['errors']) }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Charge Time" area-label="Charge Time" type="text" formControlName="chargeTime" />
+      <mat-error *ngIf="newCar.get('chargeTime')['errors']">
+        {{ getErrorMessage(newCar.get('chargeTime')['errors']) }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <ngx-mat-file-input formControlName="image" placeholder="Image file" accept="image/*"
+        (change)="changeListener($event)"></ngx-mat-file-input>
+
+      <mat-icon matSuffix>folder</mat-icon>
+    </mat-form-field>
+    <button mat-raised-button type="submit">
+      Add Car
+    </button>
+  </form>
+</div>

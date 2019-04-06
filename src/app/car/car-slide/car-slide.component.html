@@ -1,0 +1,16 @@
+<div class="container" *ngIf="cars$ | async">
+  <h1 id="compareCar">Compare cars</h1>
+  <div class="swipe">
+    <button (click)="swipeLeft()" mat-icon-button id="left">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    <div class="swipe-box" (swipeleft)="swipeLeft()" (swiperight)="swipeRight()">
+      <div>
+        <app-car [car]="currentCar"></app-car>
+      </div>
+    </div>
+    <button (click)="swipeRight()" mat-icon-button id="right">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+  </div>
+</div>

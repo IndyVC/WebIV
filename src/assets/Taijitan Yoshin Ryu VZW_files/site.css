@@ -1,0 +1,231 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Sanchez');
+
+:root {
+    /*Color Palette*/
+    --primary: #00b4ab;
+    --counter: #454553;
+    --white: #dfdfdf;
+    --yellow: #fbba0a;
+    --orange: #f08d0c;
+    --green: #269433;
+    --blue: #2962df;
+    --brown: #853f13;
+    --black: #151515;
+    /*Fonts*/
+    --headerFont: 'Montserrat', sans-serif;
+    --bodyFont: 'Sanchez', serif;
+}
+
+html {
+    box-sizing: content-box;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+.container{
+    margin:0;
+    padding:0;
+}
+.containerAanwezigheden{
+    width:100%;
+    display:block;
+}
+.sidenav {
+    position:fixed;
+}
+.pb-3{
+    float:right;
+    width:80%;
+}
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    text-align: center; /* Horizontally center the text here */
+}
+
+.wit {
+    background-color: var(--white);
+}
+
+.geel {
+    background-color: var(--yellow);
+}
+
+.oranje {
+    background-color: var(--orange);
+}
+
+.groen {
+    background-color: var(--green);
+}
+
+.blauw {
+    background-color: var(--blue);
+}
+
+.bruin {
+    background-color: var(--brown);
+}
+
+.zwart {
+    background-color: var(--black);
+}
+
+.graadBox {
+    border-radius: 0;
+    border: none;
+    display: inline-block;
+    height: 3vw;
+    width: 3vw;
+    vertical-align: bottom;
+    /*margin-left: 3%;
+    margin-right: 3%;*/
+    border-radius: 50%;
+    margin: 1% 3%;
+}
+
+.lidNaam {
+    font-family: var(--headerFont);
+    display: inline-block;
+    color: var(--white);
+    font-size: 2vw;
+    width: 60%;
+    /*margin-right: 25%;*/
+    vertical-align: middle;
+    margin: 1% 22% 1% 0;
+}
+
+i {
+    font-size: 3vw;
+    width: 3vw;
+    height: 3vw;
+    display: inline-block;
+    vertical-align: middle;
+    z-index: 1;
+    color: whitesmoke;
+    margin: 1% 0;
+}
+
+.card-body {
+    padding: 0;
+    background: var(--primary);
+    border-radius: 0.5rem;
+    height: 100%;
+}
+
+.card {
+    background: var(--primary);
+    border-radius: 0.5rem;
+    margin: 1.5% 0;
+    height: 100%;
+}
+
+.headerfont {
+    font-family: var(--headerFont);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.card:hover,
+.card-body:hover {
+    background-color: #00909a;
+}
+
+button {
+    font-size: 100%;
+    font-family: inherit;
+    padding: 0;
+    border: none;
+    background: none;
+    display: block;
+    width: 100%;
+    margin: 0;
+    align-items: unset;
+    text-align: initial;
+    cursor: pointer;
+    display: block;
+}
+
+    button,
+    button:focus,
+    button:active {
+        border: none;
+        background: none;
+        outline: none;
+        padding: 0;
+    }
+}
+
+.oefening {
+    width: 12vw;
+    margin: 1em;
+}
+
+.oefeningContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.content {
+    display: flex;
+}
+
+.graadnav {
+    background-color: var(--black);
+    width: 20%;
+}

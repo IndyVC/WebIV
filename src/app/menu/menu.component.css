@@ -4,17 +4,6 @@
   display: none;
 }
 
-.container {
-  height: 20vh;
-  width: 100vw;
-}
-
-h1 {
-  color: #f6f5f6;
-  margin: 10px;
-  text-align: center;
-}
-
 .unfold_more {
   color: #f6f5f6;
   position: fixed;
@@ -30,26 +19,6 @@ a {
 
 /*--DESKTOP--*/
 @media only screen and (min-width: 800px) {
-  .container {
-    top: 0;
-    background-image: url(../../assets/homepage.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: unset;
-    width: 100vw;
-    height: 100vh;
-  }
-
-  h1 {
-    margin: 0;
-    padding-top: 75vh;
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bolder;
-    font-size: 48px;
-
-  }
 
   #toggle {
     display: none;
@@ -58,11 +27,10 @@ a {
   .nav {
     flex-direction: row;
     justify-content: space-around;
-    height: 4%;
+    height: 3vh;
     width: 100%;
     align-content: center;
-    position: fixed;
-    background-color: #1a1a1aa1;
+    background-color: #1a1a1a;
     z-index: 100;
     display: flex;
   }

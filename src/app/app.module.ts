@@ -1,72 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {
-  MatButtonModule,
-  MatCheckboxModule,
-  MatListModule,
-  MatCardModule,
-  MatIconModule,
-  MatTooltipModule,
-  MatSidenavModule,
-  MatToolbarModule,
-  MatInputModule,
-  MatDialogModule,
-  MatSliderModule,
-  MatProgressSpinnerModule
-} from '@angular/material';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MaterialFileInputModule } from 'ngx-material-file-input';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatMenuModule } from '@angular/material/menu';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { CarModule } from './car/car.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MenuComponent } from './menu/menu.component';
-import { CompareCarComponent } from './compare-car/compare-car.component';
-import { CarComponent } from './car/car.component';
-import { Ng2CarouselamosModule } from 'ng2-carouselamos';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { LogInComponent } from './log-in/log-in.component';
-import { RegisterComponent } from './register/register.component';
-import { CarActionsComponent } from './car-actions/car-actions.component';
+import { BeheerModule } from './beheer/beheer.module';
+import { LogInComponent } from './authentication/log-in/log-in.component';
+import { RegisterComponent } from './authentication/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AddCarComponent } from './add-car/add-car.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MenuComponent,
-    CompareCarComponent,
-    CarComponent,
-    LogInComponent,
-    RegisterComponent,
-    CarActionsComponent,
-    AddCarComponent
-  ],
+  declarations: [AppComponent, PageNotFoundComponent, MenuComponent,LogInComponent,RegisterComponent],
   imports: [
     BrowserModule,
-    MatButtonModule,
-    MatCheckboxModule,
     BrowserAnimationsModule,
-    MatListModule,
-    MatCardModule,
-    MatIconModule,
-    MatMenuModule,
-    MatExpansionModule,
-    MatFormFieldModule,
-    Ng2CarouselamosModule,
-    FlexLayoutModule,
-    MatTooltipModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    MatDialogModule,
-    MatSliderModule,
+    MaterialModule,
+    BeheerModule,
     HttpClientModule,
-    MaterialFileInputModule,
-    MatProgressSpinnerModule
+    AppRoutingModule,
+    CarModule,
+    BeheerModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

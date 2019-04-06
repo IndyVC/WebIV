@@ -7,27 +7,33 @@
       <mat-icon class="unfold_more">more_vert</mat-icon>
     </button>
     <div class="nav">
-      <a href="#compareCar">Compare cars</a>
-      <a href="#">Plan my route</a>
-      <a href="#" (click)="toggleLogin()">Log in</a>
-      <a href="#" (click)="toggleRegister()">Register</a>
+      <a [routerLink]="['cars']">Compare cars</a>
+      <a *ngIf="!loggedIn();else logout" (click)="toggleLogin()">Log in</a>
+      <ng-template #logout>
+        <a (click)="logOut()">Log out</a>
+      </ng-template>
+      <a (click)="toggleRegister()">Register</a>
+      <a *ngIf="isAdmin();" [routerLink]="['beheer']">Admin Tool</a>
     </div>
   </div>
-  <h1>Following the future is not always easy.</h1>
   <div class="matMenu">
     <mat-menu #menu="matMenu">
       <button mat-menu-item>
-        <a href="#compareCar">Compare cars</a>
+        <a [routerLink]="['cars']">Compare cars</a>
       </button>
-      <button mat-menu-item>
-        <a href="#">Plan my route</a>
-      </button>
-      <button mat-menu-item (click)="toggleLogin()">
+      <button *ngIf="!loggedIn();else logout" mat-menu-item (click)="toggleLogin()">
         <a>Log in</a>
       </button>
+      <ng-template #logout>
+        <a (click)="logOut()">Log out</a>
+      </ng-template>
       <button mat-menu-item (click)="toggleRegister()">
-        <a href="#">Register</a>
+        <a>Register</a>
+      </button>
+      <button mat-menu-item *ngIf="isAdmin()">
+        <a [routerLink]="['beheer']">Admin Tool</a>
       </button>
     </mat-menu>
   </div>
 </div>
+<ng-content></ng-content>

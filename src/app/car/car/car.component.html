@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="left">
+    <img [src]="sanitizer.bypassSecurityTrustUrl(car.image)" />
+  </div>
+  <div class="right">
+    <div class="text">
+      <h1>{{car.model}}</h1>
+      <p>By {{car.brand}}</p>
+    </div>
+    <div class="buttons">
+      <a [routerLink]="['../review',car.model]" class="readMore">Review</a>
+    </div>
+  </div>
+</div>

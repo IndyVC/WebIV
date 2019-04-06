@@ -1,0 +1,27 @@
+/*--MOBILE FIRST*-*/
+.container {
+  width: 100vw;
+}
+
+h1 {
+  color: #f6f5f6;
+  margin: 10px;
+  text-align: center;
+}
+
+/*--DESKTOP--*/
+@media screen and (min-width:800px) {
+  .container {
+    height: 100vh;
+    background-image: url("../../assets/homepage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  h1 {
+    padding-top: 80vh;
+    font-size: 48px;
+    margin: 0;
+  }
+}
