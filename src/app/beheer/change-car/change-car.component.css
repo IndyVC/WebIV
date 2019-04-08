@@ -1,0 +1,62 @@
+/*MOBIEL FIRST*/
+.container {
+  box-sizing: border-box;
+  background-color: #f6f5f6;
+  color: #1a1a1a;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Open Sans', sans-serif;
+  padding: 20px;
+}
+
+.form {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+
+}
+
+.form::ng-deep.mat-form-field-label {
+  color: #1a1a1a;
+}
+
+.form::ng-deep.mat-input-element {
+  color: #1a1a1a;
+}
+
+.form::ng-deep.mat-form-field-underline {
+  background-color: #1a1a1a;
+}
+
+@media only screen and (min-width : 800px) {
+  .form {
+    width: 40vw;
+    background-color: #f6f5f6;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .container {
+    background-image: url(../../../assets/tokyo2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+  }
+
+  h1 {
+    color: #f6f5f6;
+  }
+}

@@ -13,9 +13,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
+import { AdminToolComponent } from './beheer/admin-tool/admin-tool.component';
+import { ChangeCarComponent } from './beheer/change-car/change-car.component';
+import { DeleteCarComponent } from './beheer/delete-car/delete-car.component';
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent, MenuComponent,LogInComponent,RegisterComponent],
+  declarations: [
+    AppComponent,
+    PageNotFoundComponent,
+    MenuComponent,
+    LogInComponent,
+    RegisterComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

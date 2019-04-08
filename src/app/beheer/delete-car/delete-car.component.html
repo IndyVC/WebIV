@@ -1,0 +1,14 @@
+<div class="container">
+  <form [formGroup]="deleteCar" (ngSubmit)="onSubmit()" class="form">
+    <mat-form-field>
+      <input matInput placeholder="Model you wish to delete" area-label="Model you wish to delete" type="text"
+        formControlName="model">
+      <mat-error *ngIf="deleteCar.get('model')['errors']">
+        {{ getErrorMessage(deleteCar.get('model')['errors']) }}
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button type="submit" [disabled]="!deleteCar.valid">
+      Delete Car
+    </button>
+  </form>
+</div>

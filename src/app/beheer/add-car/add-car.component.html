@@ -43,7 +43,7 @@
 
       <mat-icon matSuffix>folder</mat-icon>
     </mat-form-field>
-    <button mat-raised-button type="submit">
+    <button mat-raised-button type="submit" [disabled]="!newCar.valid">
       Add Car
     </button>
   </form>

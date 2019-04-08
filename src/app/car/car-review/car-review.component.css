@@ -2,6 +2,12 @@
 .container {
   width: 100vw;
   margin-top: 30px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container h1 {
+  font-weight: bold;
+  font-size: 2em;
 }
 
 img {
@@ -10,11 +16,12 @@ img {
 
 /*READMORE-PART*/
 .ReadMore {
+  box-sizing: border-box;
   background-color: #1a1a1a;
   color: #f6f5f6;
-  padding: 20px;
-  width: 96vw;
+  width: 100vw;
   position: relative;
+  padding: 20px;
 }
 
 .ReadMore h1 {
@@ -26,6 +33,7 @@ img {
 .mat-expansion-panel {
   background-color: #424242;
   margin-right: 50px;
+  margin-top: 20px;
 }
 
 #comment {
@@ -42,7 +50,6 @@ img {
   width: 100vw;
   background-color: #f6f5f6;
   color: #1a1a1a;
-  padding: 20px;
 }
 
 .Rate h1 {
@@ -67,6 +74,8 @@ img {
 .content {
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .rating {
@@ -74,6 +83,7 @@ img {
   display: flex;
   flex-direction: row;
   position: relative;
+  padding-bottom: 20px;
 }
 
 .rating .mat-slider {
@@ -87,6 +97,7 @@ img {
   display: flex;
   flex-direction: row;
   position: relative;
+  padding-bottom: 20px;
 }
 
 .commentClass .mat-form-field {
@@ -95,7 +106,7 @@ img {
   right: 10px;
 }
 
-@media screen and (min-width:800px) {
+@media only screen and (min-width : 800px) {
   .container {
     width: 100vw;
     height: 100vh;
@@ -131,7 +142,7 @@ img {
 
 }
 
-@media screen and (min-width:1500px) {
+@media only screen and (min-width : 1500px) {
 
   img {
     width: 60%;

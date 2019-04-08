@@ -1,0 +1,22 @@
+.container {
+  width: 100vw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  color: #f6f5f6;
+}
+
+.form::ng-deep.mat-form-field-label {
+  color: #1a1a1a;
+}
+
+.form::ng-deep.mat-input-element {
+  color: #1a1a1a;
+}
+
+.form::ng-deep.mat-form-field-underline {
+  background-color: #1a1a1a;
+}

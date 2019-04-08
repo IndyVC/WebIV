@@ -1,0 +1,58 @@
+<div class="container">
+  <h1>Change Car</h1>
+  <form [formGroup]="changeCar" (ngSubmit)="onSubmit()" class="form">
+    <mat-form-field>
+      <input matInput placeholder="Car u wish to change (model name)" area-label="Car u wish to change (model name)"
+        type="text" formControlName="modelToChange">
+      <mat-error *ngIf="changeCar.get('modelToChange')['errors']">
+        {{ getErrorMessage(changeCar.get('modelToChange')['errors']) }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="New model name" area-label="New model name" type="text" formControlName="model">
+      <mat-error *ngIf="changeCar.get('model')['errors']">
+        {{ getErrorMessage(changeCar.get('model')['errors']) }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="New brand" area-label="New brand" type="text" formControlName="brand">
+      <mat-error *ngIf="changeCar.get('brand')['errors']">
+        {{ getErrorMessage(changeCar.get('brand')['errors']) }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="New price" area-label="New price" type="text" formControlName="price">
+      <mat-error *ngIf="changeCar.get('price')['errors']">
+        {{ getErrorMessage(changeCar.get('price')['errors']) }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="New max speed" area-label="New max speed" type="text" formControlName="maxSpeed">
+      <mat-error *ngIf="changeCar.get('maxSpeed')['errors']">
+        {{ getErrorMessage(changeCar.get('maxSpeed')['errors']) }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="New max range" area-label="New max range" type="text" formControlName="maxRange">
+      <mat-error *ngIf="changeCar.get('maxRange')['errors']">
+        {{ getErrorMessage(changeCar.get('maxRange')['errors']) }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="New charge time" area-label="New charge time" type="text"
+        formControlName="chargeTime">
+      <mat-error *ngIf="changeCar.get('chargeTime')['errors']">
+        {{ getErrorMessage(changeCar.get('chargeTime')['errors']) }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <ngx-mat-file-input formControlName="image" placeholder="Image file" accept="image/*"
+        (change)="changeListener($event)"></ngx-mat-file-input>
+
+      <mat-icon matSuffix>folder</mat-icon>
+    </mat-form-field>
+    <button mat-raised-button type="submit" [disabled]="!changeCar.valid">
+      Change Car
+    </button>
+  </form>
+</div>

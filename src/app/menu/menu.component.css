@@ -17,8 +17,9 @@ a {
   font-weight: bold;
 }
 
+
 /*--DESKTOP--*/
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width : 800px) {
 
   #toggle {
     display: none;
@@ -27,11 +28,11 @@ a {
   .nav {
     flex-direction: row;
     justify-content: space-around;
-    height: 3vh;
+    height: 30px;
     width: 100%;
     align-content: center;
     background-color: #1a1a1a;
-    z-index: 100;
+    z-index: 10000000;
     display: flex;
   }
 
@@ -39,7 +40,7 @@ a {
   a {
     color: #f6f5f6;
     font-family: 'Open Sans', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     padding: 10;
     font-weight: bold;
   }
