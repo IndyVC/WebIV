@@ -1,5 +1,6 @@
 .container {
   width: 100vw;
+  height: 100vh;
 }
 
 form {
@@ -7,16 +8,27 @@ form {
   flex-direction: column;
   background-color: #1a1a1a;
   color: #f6f5f6;
+  padding: 10px;
+  height: 100%;
 }
 
 .form::ng-deep.mat-form-field-label {
-  color: #1a1a1a;
+  color: #f6f5f6;
 }
 
 .form::ng-deep.mat-input-element {
-  color: #1a1a1a;
+  color: #f6f5f6;
 }
 
 .form::ng-deep.mat-form-field-underline {
-  background-color: #1a1a1a;
+  background-color: #f6f5f6;
+}
+
+@media only screen and (min-width:800px) {
+  .container {
+    background-image: url(../../../assets/ElonMusk.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }

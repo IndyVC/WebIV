@@ -48,6 +48,7 @@ export class CarDataService {
   }
 
   changeCar$(modelCar: string, payload: FormGroup) {
+    console.log(payload.value);
     return this.http.put(`${environment.apiUrl}/Cars/${modelCar}`, payload, {
       headers: new HttpHeaders({
         Authorization: 'bearer ' + localStorage.getItem('token')

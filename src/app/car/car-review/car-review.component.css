@@ -81,29 +81,33 @@ img {
 .rating {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: relative;
-  padding-bottom: 20px;
+  padding: 30px;
 }
 
 .rating .mat-slider {
-  width: 200px;
+  width: 80%;
   position: absolute;
-  right: 10px;
+  margin-top: 20px;
 }
 
 .commentClass {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: relative;
-  padding-bottom: 20px;
+  padding: 30px;
 }
 
 .commentClass .mat-form-field {
-  width: 200px;
+  width: 80%;
   position: absolute;
-  right: 10px;
+  margin-top: 20px;
+}
+
+#buttonRate {
+  margin-top: 60px;
 }
 
 @media only screen and (min-width : 800px) {

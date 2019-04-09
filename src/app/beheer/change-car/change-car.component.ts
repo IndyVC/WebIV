@@ -48,10 +48,10 @@ export class ChangeCarComponent implements OnInit {
   onSubmit() {
     this.modelToChange = this.changeCar.get('modelToChange').value;
     this.changeCar.removeControl('modelToChange');
+    this.changeCar.get('image').setValue(this.image);
     this._carService
       .changeCar$(this.modelToChange, this.changeCar.value)
       .subscribe(newCar => {
-        console.log(newCar);
         alert(`Succesfully changed ${this.modelToChange}`);
         this._router.navigate(['cars']);
       });
