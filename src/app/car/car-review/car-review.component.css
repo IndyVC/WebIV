@@ -74,12 +74,13 @@ img {
 .content {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
+  align-self: center;
 }
 
 .rating {
-  width: 100%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -101,7 +102,7 @@ img {
 }
 
 .commentClass .mat-form-field {
-  width: 80%;
+  width: 80vw;
   position: absolute;
   margin-top: 20px;
 }

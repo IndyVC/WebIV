@@ -44,7 +44,11 @@ export class MenuComponent implements OnInit {
     if (this.loggedIn()) {
       var token = localStorage.getItem('token');
       var data = JWT(token);
-      return data.sub == 'Indy.vancanegem@student.hogent.be';
+      return (
+        data['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] ==
+        'Admin'
+      );
+      //return data.sub == 'Indy.vancanegem@student.hogent.be';
     }
   }
 }
