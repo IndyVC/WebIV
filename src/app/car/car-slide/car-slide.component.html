@@ -1,4 +1,4 @@
-<div class="container" *ngIf="cars$ | async">
+<div class="container" *ngIf="(cars$ | async);else loadingOrError">
   <h1 id="compareCar">Compare cars</h1>
   <div class="swipe">
     <button (click)="swipeLeft()" mat-icon-button id="left">
@@ -14,3 +14,14 @@
     </button>
   </div>
 </div>
+<ng-template #loadingOrError>
+  <mat-card>
+    <mat-error *ngIf="(loadingError$ | async) as errorMessage; else loading">
+      Error loading the recipe list: {{ errorMessage }}. <br />
+      Please try again later.
+    </mat-error>
+    <ng-template #loading>
+      <mat-spinner></mat-spinner>
+    </ng-template>
+  </mat-card>
+</ng-template>

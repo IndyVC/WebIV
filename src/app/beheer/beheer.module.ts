@@ -8,6 +8,12 @@ import { AdminToolComponent } from './admin-tool/admin-tool.component';
 import { ChangeCarComponent } from './change-car/change-car.component';
 import { DeleteCarComponent } from './delete-car/delete-car.component';
 
+const routes: Routes = [
+  { path: 'admin', component: AdminToolComponent },
+  { path: 'admin/addCar', component: AddCarComponent },
+  { path: 'admin/changeCar', component: ChangeCarComponent },
+  { path: 'admin/deleteCar', component: DeleteCarComponent }
+];
 @NgModule({
   declarations: [
     AddCarComponent,
@@ -15,6 +21,10 @@ import { DeleteCarComponent } from './delete-car/delete-car.component';
     ChangeCarComponent,
     DeleteCarComponent
   ],
-  imports: [CommonModule, MaterialModule, MaterialFileInputModule, RouterModule]
+  imports: [
+    CommonModule, 
+    MaterialModule, 
+    MaterialFileInputModule, 
+    RouterModule.forChild(routes)]
 })
 export class BeheerModule {}

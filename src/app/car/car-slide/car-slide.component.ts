@@ -15,6 +15,7 @@ export class CarSlideComponent implements OnInit {
   cars: Car[];
   cars$ = this._carService.cars$;
   currentCar: Car;
+  public loadingError$ = this._carService.loadingError$;
 
   constructor(private _carService: CarDataService) {}
 

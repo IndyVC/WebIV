@@ -31,10 +31,10 @@ import { DeleteCarComponent } from './beheer/delete-car/delete-car.component';
     MaterialModule,
     BeheerModule,
     HttpClientModule,
-    AppRoutingModule,
     CarModule,
     BeheerModule,
-    HomeModule
+    HomeModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

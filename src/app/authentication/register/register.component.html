@@ -17,7 +17,7 @@
           </mat-error>
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Password" area-label="Password" type="text" formControlName="password">
+          <input matInput placeholder="Password" area-label="Password" type="password" formControlName="password">
           <mat-error *ngIf="register.get('password')['errors']">
             {{getErrorMessage(register.get('password')['errors'])}}
           </mat-error>
