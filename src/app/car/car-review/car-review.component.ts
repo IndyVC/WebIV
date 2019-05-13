@@ -47,7 +47,6 @@ export class CarReviewComponent implements OnInit {
       var model = this.currentCar.model;
       this._carService.postReview$(model, this.review.value).subscribe(res => {
         console.log(res);
-        alert(`Successfully added the review`);
         window.location.reload();
       });
     }

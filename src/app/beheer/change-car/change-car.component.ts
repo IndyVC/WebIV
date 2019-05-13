@@ -52,7 +52,6 @@ export class ChangeCarComponent implements OnInit {
     this._carService
       .changeCar$(this.modelToChange, this.changeCar.value)
       .subscribe(newCar => {
-        alert(`Succesfully changed ${this.modelToChange}`);
         this._router.navigate(['cars']);
       });
   }

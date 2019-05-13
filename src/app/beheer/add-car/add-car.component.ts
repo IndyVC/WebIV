@@ -52,7 +52,6 @@ export class AddCarComponent implements OnInit {
     this.newCar.get('image').setValue(this.image);
     this._carService.postCar$(this.newCar.value).subscribe(newCar => {
       console.log(newCar);
-      alert(`Succesfully added ${this.newCar.get('model').value}`);
       this._router.navigate(['cars']);
     });
   }

@@ -25,9 +25,8 @@ export class DeleteCarComponent implements OnInit {
   onSubmit() {
     this._carService
       .deleteCar$(this.deleteCar.get('model').value)
-      .subscribe(newCar => {
-        console.log(newCar);
-        alert(`Succesfully deleted ${this.deleteCar.get('model').value}`);
+      .subscribe(deletedCar => {
+        console.log(deletedCar);
         this._router.navigate(['cars']);
       });
   }
