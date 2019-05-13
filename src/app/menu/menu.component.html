@@ -7,15 +7,15 @@
       <mat-icon class="unfold_more">more_vert</mat-icon>
     </button>
     <div class="nav">
-      <a [routerLink]="['cars']">Compare cars</a>
-      <a *ngIf="!loggedIn();else logoutBar" (click)="toggleLogin()">Log in</a>
+      <a [routerLink]="['cars']" data-cy="compareCarsBtn">Compare cars</a>
+      <a *ngIf="!loggedIn();else logoutBar" data-cy="loginBtn" (click)="toggleLogin()">Log in</a>
 
       <ng-template #logoutBar>
-        <a (click)="logOut()">Log out</a>
+        <a (click)="logOut()" data-cy="logoutBtn">Log out</a>
       </ng-template>
 
       <a (click)="toggleRegister()">Register</a>
-      <a *ngIf="isAdmin();" [routerLink]="['admin']">Admin Tool</a>
+      <a *ngIf="isAdmin();" [routerLink]="['admin']" data-cy="adminToolBtn">Admin Tool</a>
     </div>
   </div>
   <div class="matMenu">

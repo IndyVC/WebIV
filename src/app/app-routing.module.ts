@@ -26,7 +26,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren: 'app/beheer/beheer.module#BeheerModule'
+    loadChildren: './beheer/beheer.module#BeheerModule'
   },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', component: PageNotFoundComponent }

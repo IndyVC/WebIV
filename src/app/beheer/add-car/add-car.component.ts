@@ -29,7 +29,7 @@ export class AddCarComponent implements OnInit {
       maxSpeed: this._fb.control('', Validators.required),
       maxRange: this._fb.control('', Validators.required),
       chargeTime: this._fb.control('', Validators.required),
-      image: this._fb.control('', Validators.required)
+      image: this._fb.control('')
     });
   }
 
