@@ -7,6 +7,14 @@
       <h1>{{car.model}}</h1>
       <p>By {{car.brand}}</p>
     </div>
+    <div class="amountOfStars">
+      <div *ngFor="let i of ' '.repeat(car.rating).split('')">
+        <i class="small material-icons">star</i>
+      </div>
+      <div *ngFor="let i of ' '.repeat(5 - car.rating).split('')">
+        <i class="small material-icons">star_border</i>
+      </div>
+    </div>
     <div class="buttons">
       <a [routerLink]="['../review',car.model]" class="readMore">Review</a>
     </div>

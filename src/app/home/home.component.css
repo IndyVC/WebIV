@@ -18,6 +18,22 @@ p {
   font-family: 'Open Sans', sans-serif;
 }
 
+a {
+  color: #f6f5f6;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  background-color: #1565C0;
+  display: inline-block;
+  margin: 10px auto;
+}
+
+a:hover {
+  color: #1a1a1a;
+}
+
 /*--DESKTOP--*/
 @media only screen and (min-width : 800px) {
   .container {
@@ -34,4 +50,9 @@ p {
     margin: 0;
     color: #f6f5f6;
   }
+
+  p {
+    color: #f6f5f6;
+  }
+
 }

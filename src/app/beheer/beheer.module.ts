@@ -22,9 +22,10 @@ const routes: Routes = [
     DeleteCarComponent
   ],
   imports: [
-    CommonModule, 
-    MaterialModule, 
-    MaterialFileInputModule, 
-    RouterModule.forChild(routes)]
+    CommonModule,
+    MaterialModule,
+    MaterialFileInputModule,
+    RouterModule.forChild(routes)
+  ]
 })
 export class BeheerModule {}
