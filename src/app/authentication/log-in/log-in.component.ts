@@ -42,9 +42,13 @@ export class LogInComponent implements OnInit {
     console.log(this.login.value);
     this._authenticate.logIn$(this.login.value).subscribe(
       token => {
-        localStorage.setItem('token', token);
-        console.log(token);
-        this.toggle();
+        if (token) {
+          localStorage.setItem('token', token);
+          console.log(token);
+          this.toggle();
+        } else {
+          this.errorMessage = 'Failed to login.';
+        }
       },
       (err: HttpErrorResponse) => {
         console.log(err);
