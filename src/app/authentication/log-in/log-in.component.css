@@ -61,6 +61,11 @@
   padding-bottom: 15px;
 }
 
+#errorMessage {
+  color: rgb(230, 90, 0);
+  margin-top: 10px;
+}
+
 @media only screen and (min-width : 800px) {
   .container {
     width: 50%;

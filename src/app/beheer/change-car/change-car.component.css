@@ -40,6 +40,11 @@ h1 {
   background-color: #1a1a1a;
 }
 
+#errorMessage {
+  color: rgb(230, 90, 0);
+  margin-top: 10px;
+}
+
 @media only screen and (min-width : 800px) {
   .form {
     width: 40vw;

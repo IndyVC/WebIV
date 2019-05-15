@@ -17,7 +17,7 @@
 <ng-template #loadingOrError>
   <mat-card>
     <mat-error *ngIf="(loadingError$ | async) as errorMessage; else loading">
-      Error loading the recipe list: {{ errorMessage }}. <br />
+      Error loading the car list: {{ errorMessage }}. <br />
       Please try again later.
     </mat-error>
     <ng-template #loading>

@@ -5,6 +5,7 @@ import { CarDataService } from '../car-data.service';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from 'src/app/authentication/authentication.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-car-review',
@@ -15,6 +16,8 @@ export class CarReviewComponent implements OnInit {
   private _currentCar: Car;
   public review: FormGroup;
   public succes: boolean = false;
+  public errorMessage: string;
+
   constructor(
     private _carService: CarDataService,
     private _authentication: AuthenticationService,
@@ -45,10 +48,16 @@ export class CarReviewComponent implements OnInit {
   onSubmit() {
     if (this.loggedIn()) {
       var model = this.currentCar.model;
-      this._carService.postReview$(model, this.review.value).subscribe(res => {
-        console.log(res);
-        window.location.reload();
-      });
+      this._carService.postReview$(model, this.review.value).subscribe(
+        res => {
+          console.log(res);
+          window.location.reload();
+        },
+        (err: HttpErrorResponse) => {
+          console.log(err);
+          this.errorMessage = 'Failed to post review.';
+        }
+      );
     }
   }
 

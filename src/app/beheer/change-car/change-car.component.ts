@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CarDataService } from 'src/app/car/car-data.service';
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-change-car',
@@ -12,6 +13,8 @@ export class ChangeCarComponent implements OnInit {
   public changeCar: FormGroup;
   public image;
   public fileReader: FileReader = new FileReader();
+  public errorMessage: string;
+
   @Input() public modelToChange: string;
 
   constructor(
@@ -51,9 +54,15 @@ export class ChangeCarComponent implements OnInit {
     this.changeCar.get('image').setValue(this.image);
     this._carService
       .changeCar$(this.modelToChange, this.changeCar.value)
-      .subscribe(newCar => {
-        this._router.navigate(['cars']);
-      });
+      .subscribe(
+        newCar => {
+          this._router.navigate(['cars']);
+        },
+        (err: HttpErrorResponse) => {
+          console.log(err);
+          this.errorMessage = 'Failed to change car.';
+        }
+      );
   }
 
   getErrorMessage(errors: any) {

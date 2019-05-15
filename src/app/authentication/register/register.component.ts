@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '../authentication.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-registreer',
@@ -10,7 +11,7 @@ import { AuthenticationService } from '../authentication.service';
 export class RegisterComponent implements OnInit {
   public show: boolean = false;
   public register: FormGroup;
-
+  public errorMessage: string;
   constructor(
     private _authenticate: AuthenticationService,
     private _fb: FormBuilder
@@ -44,11 +45,17 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     console.log(this.register.value);
-    this._authenticate.register$(this.register.value).subscribe(token => {
-      localStorage.setItem('token', token);
-      console.log(token);
-      this.toggle();
-    });
+    this._authenticate.register$(this.register.value).subscribe(
+      token => {
+        localStorage.setItem('token', token);
+        console.log(token);
+        this.toggle();
+      },
+      (err: HttpErrorResponse) => {
+        console.log(err);
+        this.errorMessage = 'Failed to register.';
+      }
+    );
   }
 
   getErrorMessage(errors: any) {

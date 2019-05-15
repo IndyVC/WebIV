@@ -1,4 +1,3 @@
-
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {
   FormGroup,
@@ -7,6 +6,7 @@ import {
   FormBuilder
 } from '@angular/forms';
 import { AuthenticationService } from '../authentication.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-log-in',
@@ -16,6 +16,7 @@ import { AuthenticationService } from '../authentication.service';
 export class LogInComponent implements OnInit {
   public show: boolean = false;
   public login: FormGroup;
+  public errorMessage: string;
 
   constructor(
     private _authenticate: AuthenticationService,
@@ -39,11 +40,17 @@ export class LogInComponent implements OnInit {
 
   onSubmit() {
     console.log(this.login.value);
-    this._authenticate.logIn$(this.login.value).subscribe(token => {
-      localStorage.setItem('token', token);
-      console.log(token);
-      this.toggle();
-    });
+    this._authenticate.logIn$(this.login.value).subscribe(
+      token => {
+        localStorage.setItem('token', token);
+        console.log(token);
+        this.toggle();
+      },
+      (err: HttpErrorResponse) => {
+        console.log(err);
+        this.errorMessage = 'Failed to login.';
+      }
+    );
   }
 
   getErrorMessage(errors: any) {

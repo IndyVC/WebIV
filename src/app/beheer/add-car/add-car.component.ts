@@ -3,6 +3,7 @@ import { CarDataService } from '../../car/car-data.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Car } from '../../car/car.model';
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-car',
@@ -13,6 +14,8 @@ export class AddCarComponent implements OnInit {
   public newCar: FormGroup;
   public fileReader: FileReader = new FileReader();
   public image;
+  public errorMessage: string;
+
   @Input() public currentCar: Car;
 
   constructor(
@@ -50,10 +53,16 @@ export class AddCarComponent implements OnInit {
     console.log(this.image);
     console.log(this.newCar.get('image').value);
     this.newCar.get('image').setValue(this.image);
-    this._carService.postCar$(this.newCar.value).subscribe(newCar => {
-      console.log(newCar);
-      this._router.navigate(['cars']);
-    });
+    this._carService.postCar$(this.newCar.value).subscribe(
+      newCar => {
+        console.log(newCar);
+        this._router.navigate(['cars']);
+      },
+      (err: HttpErrorResponse) => {
+        console.log(err);
+        this.errorMessage = 'Failed to add car.';
+      }
+    );
   }
 
   getErrorMessage(errors: any) {

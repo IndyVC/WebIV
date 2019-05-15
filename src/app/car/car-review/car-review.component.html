@@ -48,6 +48,9 @@
       <div *ngIf="!loggedIn()">
         <h2>You are not logged in!</h2>
       </div>
+      <div *ngIf="errorMessage" id="errorMessage">
+        <p>{{errorMessage}}</p>
+      </div>
     </div>
   </div>
 </div>
