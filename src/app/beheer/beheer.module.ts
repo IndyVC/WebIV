@@ -7,10 +7,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminToolComponent } from './admin-tool/admin-tool.component';
 import { ChangeCarComponent } from './change-car/change-car.component';
 import { DeleteCarComponent } from './delete-car/delete-car.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: 'admin', component: AdminToolComponent },
-  { path: 'admin/addCar', component: AddCarComponent },
+  { path: 'admin/addCar',canActivate: [ AuthGuard ], component: AddCarComponent },
   { path: 'admin/changeCar', component: ChangeCarComponent },
   { path: 'admin/deleteCar', component: DeleteCarComponent }
 ];

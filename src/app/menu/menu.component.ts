@@ -3,6 +3,7 @@ import { LogInComponent } from '../authentication/log-in/log-in.component';
 import { RegisterComponent } from '../authentication/register/register.component';
 import { AuthenticationService } from '../authentication/authentication.service';
 import * as JWT from 'jwt-decode';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -13,7 +14,10 @@ export class MenuComponent implements OnInit {
   @ViewChild(LogInComponent) loginComponent: LogInComponent;
   @ViewChild(RegisterComponent) registerComponent: RegisterComponent;
 
-  constructor(private _authentication: AuthenticationService) {}
+  constructor(
+    private _authentication: AuthenticationService,
+    private _router: Router
+  ) {}
 
   ngOnInit() {
     this.isAdmin();
@@ -38,6 +42,7 @@ export class MenuComponent implements OnInit {
 
   logOut() {
     localStorage.removeItem('token');
+    this._router.navigate(['/home']);
   }
 
   isAdmin() {

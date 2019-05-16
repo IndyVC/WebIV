@@ -2,11 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  constructor(private http: HttpClient) {}
+  public redirectUrl: string;
+
+  constructor(private http: HttpClient, private _router:Router) {}
 
   logIn$(login: FormGroup) {
     return this.http.post(`${environment.apiUrl}/Account/Login`, login, {

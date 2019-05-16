@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { AuthenticationService } from '../authentication.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -19,8 +20,9 @@ export class LogInComponent implements OnInit {
   public errorMessage: string;
 
   constructor(
-    private _authenticate: AuthenticationService,
-    private _fb: FormBuilder
+    private _authService: AuthenticationService,
+    private _fb: FormBuilder,
+    private _router: Router
   ) {}
 
   ngOnInit() {
@@ -40,12 +42,16 @@ export class LogInComponent implements OnInit {
 
   onSubmit() {
     console.log(this.login.value);
-    this._authenticate.logIn$(this.login.value).subscribe(
+    this._authService.logIn$(this.login.value).subscribe(
       token => {
         if (token) {
           localStorage.setItem('token', token);
           console.log(token);
           this.toggle();
+          if (this._authService.redirectUrl) {
+            this._router.navigateByUrl(this._authService.redirectUrl);
+            this._authService.redirectUrl = undefined;
+          }
         } else {
           this.errorMessage = 'Failed to login.';
         }
