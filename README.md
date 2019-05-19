@@ -29,3 +29,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # Admin account:
  - Email : Indy.vancanegem@student.hogent.be
  - Password : P@ssword1111
+
+# Link to back-end API
+https://github.com/Web-IV/web4-backend-20182019-gent-2a1-IndyVC
