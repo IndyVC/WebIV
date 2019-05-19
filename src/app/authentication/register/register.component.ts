@@ -53,7 +53,8 @@ export class RegisterComponent implements OnInit {
       },
       (err: HttpErrorResponse) => {
         console.log(err);
-        this.errorMessage = 'Failed to register.';
+        this.errorMessage =
+          'Failed to register or email is already registered!';
       }
     );
   }

@@ -58,7 +58,7 @@ export class LogInComponent implements OnInit {
       },
       (err: HttpErrorResponse) => {
         console.log(err);
-        this.errorMessage = 'Failed to login.';
+        this.errorMessage = 'Failed to login or account does not exist!';
       }
     );
   }

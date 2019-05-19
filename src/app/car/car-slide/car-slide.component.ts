@@ -26,8 +26,6 @@ export class CarSlideComponent implements OnInit {
       this.currentCar = this.cars[this.index];
       this.size = this.cars.length;
     });
-
-    console.log('TEST');
   }
 
   swipeLeft() {

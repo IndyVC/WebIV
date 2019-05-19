@@ -48,10 +48,11 @@ export class CarReviewComponent implements OnInit {
   onSubmit() {
     if (this.loggedIn()) {
       var model = this.currentCar.model;
+      console.log(this.review.value);
       this._carService.postReview$(model, this.review.value).subscribe(
         res => {
+          location.reload();
           console.log(res);
-          window.location.reload();
         },
         (err: HttpErrorResponse) => {
           console.log(err);
