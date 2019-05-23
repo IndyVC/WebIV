@@ -13,9 +13,9 @@ describe("Add New Car", () => {
     cy.get('[data-cy=adminToolBtn]').click();
     cy.get('[data-cy=addCarBtn]').click();
   });
-  it('fill in form (lets add a new E-Tron', () => {
-    cy.get('[data-cy=modelInp]').type("ETRON");
-    cy.get('[data-cy=brandInp]').type("Audi");
+  it('fill in form (lets add a new Polestar', () => {
+    cy.get('[data-cy=modelInp]').type("Polestar 1");
+    cy.get('[data-cy=brandInp]').type("Polestar");
     cy.get('[data-cy=priceInp]').type("50000");
     cy.get('[data-cy=maxSpeedInp]').type("200");
     cy.get('[data-cy=maxRangeInp]').type("500");
@@ -23,18 +23,23 @@ describe("Add New Car", () => {
     cy.get('[data-cy=imgInp]').click({
       force: true
     }).fixture("e-tron.png");
-    cy.get('[data-cy=submitBtn]').click();
+    cy.get('[data-cy=submitBtn]').click({
+      force: true
+    });
   });
 
-  it('Mock get ETRON', () => {
+  it('Mock Polestar 1', () => {
     cy.server();
     cy.route({
+      headers: {
+        Authorization: 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJJbmR5LnZhbmNhbmVnZW1Ac3R1ZGVudC5ob2dlbnQuYmUiLCJ1bmlxdWVfbmFtZSI6IkluZHkudmFuY2FuZWdlbUBzdHVkZW50LmhvZ2VudC5iZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNTU4NjQ0MDI4fQ.DmUK45dEIk9wPgDiv_udz2QOiLHdA-_4bB16gDyEDE8'
+      },
       method: 'GET',
-      url: '/cars/ETRON',
+      url: 'api/cars/',
       status: 200,
-      response: 'fixture:ETRON.json'
-    });
-    cy.visit('http://localhost:4200/review/ETRON');
+      response: 'fixture:Polestar1.json'
+    })
+    cy.visit('http://localhost:4200/cars');
 
   })
 })

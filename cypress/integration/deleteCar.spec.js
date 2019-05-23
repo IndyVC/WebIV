@@ -29,7 +29,4 @@ describe("Delete Polestar 1", () => {
       status: 201,
     });
   });
-  it('polestar 1 not visible', () => {
-    cy.visit('http://localhost:4200/review/polestar%201')
-  })
 });

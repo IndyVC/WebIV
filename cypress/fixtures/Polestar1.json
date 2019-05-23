@@ -1,7 +1,7 @@
 [{
   "id": 0,
-  "model": "ETRON",
-  "brand": "Audi",
+  "model": "Polestar 1",
+  "brand": "Polestar",
   "maxSpeed": 200,
   "maxRange": 500,
   "chargeTime": 20,
