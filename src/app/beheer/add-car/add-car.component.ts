@@ -32,7 +32,7 @@ export class AddCarComponent implements OnInit {
       maxSpeed: this._fb.control('', Validators.required),
       maxRange: this._fb.control('', Validators.required),
       chargeTime: this._fb.control('', Validators.required),
-      image: this._fb.control('')
+      image: this._fb.control('', Validators.required)
     });
   }
 
@@ -46,6 +46,7 @@ export class AddCarComponent implements OnInit {
     myReader.onloadend = e => {
       this.image = myReader.result;
     };
+    // First this is executed, then the onloadend. It reads the blob, then it is transformed into a base64 string.
     myReader.readAsDataURL(file);
   }
 

@@ -10,10 +10,22 @@ import { DeleteCarComponent } from './delete-car/delete-car.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: 'admin', component: AdminToolComponent },
-  { path: 'admin/addCar',canActivate: [ AuthGuard ], component: AddCarComponent },
-  { path: 'admin/changeCar', component: ChangeCarComponent },
-  { path: 'admin/deleteCar', component: DeleteCarComponent }
+  { path: 'admin', canActivate: [AuthGuard], component: AdminToolComponent },
+  {
+    path: 'admin/addCar',
+    canActivate: [AuthGuard],
+    component: AddCarComponent
+  },
+  {
+    path: 'admin/changeCar',
+    canActivate: [AuthGuard],
+    component: ChangeCarComponent
+  },
+  {
+    path: 'admin/deleteCar',
+    canActivate: [AuthGuard],
+    component: DeleteCarComponent
+  }
 ];
 @NgModule({
   declarations: [
