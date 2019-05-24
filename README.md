@@ -1,3 +1,14 @@
+# web4-20182019-gent-2a1-IndyVC   INDY VAN CANEGEM
+# Admin account:
+ - Username : Indy.vancanegem@student.hogent.be
+ - Password : P@ssword1111
+ # Web 4 user has also admin rights!
+  - Username: web4
+  - Password: gelukkiggeennetbeans
+
+# Link to back-end API
+https://github.com/Web-IV/web4-backend-20182019-gent-2a1-IndyVC
+
 # Electric
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.2.
@@ -25,13 +36,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# web4-20182019-gent-2a1-IndyVC
-# Admin account:
- - Username : Indy.vancanegem@student.hogent.be
- - Password : P@ssword1111
- # Web 4 user has also admin rights!
-  - Username: web4
-  - Password: gelukkiggeennetbeans
-
-# Link to back-end API
-https://github.com/Web-IV/web4-backend-20182019-gent-2a1-IndyVC
